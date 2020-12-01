@@ -53,4 +53,7 @@ main section {
   body {
     font-size: 25px;
   }
+  img {
+    width: 350px;
+    height: 300px;
 }
