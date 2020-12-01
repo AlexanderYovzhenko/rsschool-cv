@@ -1,57 +1,56 @@
 body {
-  position: sticky;
-  top: 0;
-  left: 22%;
-  max-width: 1024px;
   color: black;
   text-align: center;
   font-size: 35px;
   background: url(background.jpg) 0 0 / auto 100% no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-content {
+  max-width: 1024px;
+}
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+a:hover {
+  color: gold;
 }
 .myinformacion {
-  font-size: 35px;
-  height: 500px;
   display: inline-block;
 }
 h1 {
   color: green;
 }
 img {
-  border-radius: 10%;
-  width: 500px;
+  border-radius: 50%;
+  width: 450px;
   height: 400px;
 }
 main {
+  display: flex;
+  flex-direction: column;
   margin: 0 0 100px 0;
 }
 .summary {
   margin: 50px 0 100px 0;
-  padding: 0 100px;
 }
-.skills {
+main section {
   max-width: 50%;
 }
 .projects {
-  max-width: 50%;
   position: relative;
   bottom: 50%;
   left: 50%;
-}
-.link {
-  max-width: 50%;
-}
-.education {
-  max-width: 50%;
 }
 .interests {
-  max-width: 50%;
   position: relative;
   bottom: 50%;
   left: 50%;
 }
-.languages {
-  max-width: 50%;
-}
-.contact {
-  text-decoration: underline;
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 25px;
+  }
 }
