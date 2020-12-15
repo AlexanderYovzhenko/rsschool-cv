@@ -1,1 +1,1 @@
-# [rsschool](https://goldenmanbel.github.io/rsschool-cv/index.html)
+# [rsschool-cv](https://goldenmanbel.github.io/rsschool-cv/index.html)
