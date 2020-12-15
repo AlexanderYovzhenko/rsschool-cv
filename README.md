@@ -1,1 +1,1 @@
-# [rsschool-cv](https://github.com/GoldenManBel/rsschool-cv/blob/Simple-singolo/index.html)
+# [rsschool-cv](https://goldenmanbel.github.io/rsschool-cv/index.html)
