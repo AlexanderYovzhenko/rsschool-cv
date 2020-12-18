@@ -26,35 +26,34 @@ logo.addEventListener('click', (event) => {
 });
 
 /* slider */
-const image1 = document.querySelector('#link-slider-1');
-const image2 = document.querySelector('#link-slider-2');
-const slider = document.querySelector('#slider');
+const bottom1 = document.querySelector('.slider-action-left');
+const bottom2 = document.querySelector('.slider-action-right');
+const slider = document.querySelector('.wrapper__slider');
 
-image1.addEventListener('click', (event) => {
-     slider.classList.toggle('slider-1');  
+bottom1.addEventListener('click', (event) => {
+     slider.classList.toggle('slider-action');  
 });
 
-image2.addEventListener('click', (event) => {
-     slider.classList.toggle('slider-1');  
+bottom2.addEventListener('click', (event) => {
+     slider.classList.toggle('slider-action');  
 });
 
 
 /* portfolio */
-const portfolio = document.querySelectorAll('.portfolio-image>div img');
+const portfolio = document.querySelectorAll('.portfolio_image>div img');
 let arr = [portfolio[0], portfolio[1], portfolio[2], portfolio[3], portfolio[4], portfolio[5], portfolio[6], 
 portfolio[7], portfolio[8], portfolio[9], portfolio[10], portfolio[11]];
 
-const buttonOne = document.querySelector('.link-portfolio-1');
-const buttonTwo = document.querySelector('.link-portfolio-2');
-const buttonThree = document.querySelector('.link-portfolio-3');
-const buttonFour = document.querySelector('.link-portfolio-4');
+const buttonOne = document.querySelector('.button__portfolio-1');
+const buttonTwo = document.querySelector('.button__portfolio-2');
+const buttonThree = document.querySelector('.button__portfolio-3');
+const buttonFour = document.querySelector('.button__portfolio-4');
 
 buttonOne.addEventListener('click', (event) => {
     function shuffle(array) {
         array.sort(() => Math.random() - 0.5);
       }
       shuffle(arr);
-      alert(arr);
       buttonOne.classList.toggle('active-2');
       buttonTwo.classList.remove('active-2');
       buttonThree.classList.remove('active-2');
@@ -92,7 +91,6 @@ buttonTwo.addEventListener('click', (event) => {
         array.sort(() => Math.random() - 0.5);
       }
       shuffle(arr);
-      alert(arr);
       buttonTwo.classList.toggle('active-2');
       buttonOne.classList.remove('active-2');
       buttonThree.classList.remove('active-2');
@@ -130,7 +128,6 @@ buttonThree.addEventListener('click', (event) => {
         array.sort(() => Math.random() - 0.5);
       }
       shuffle(arr);
-      alert(arr);
       buttonThree.classList.toggle('active-2');
       buttonOne.classList.remove('active-2');
       buttonTwo.classList.remove('active-2');
@@ -168,7 +165,6 @@ buttonFour.addEventListener('click', (event) => {
         array.sort(() => Math.random() - 0.5);
       }
       shuffle(arr);
-      alert(arr);
       buttonFour.classList.toggle('active-2');
       buttonOne.classList.remove('active-2');
       buttonTwo.classList.remove('active-2');
