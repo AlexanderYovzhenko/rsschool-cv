@@ -26,6 +26,9 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+header .logo {
+  text-decoration: none;
+}
 header > div {
   display: none;
 }
@@ -73,7 +76,7 @@ header nav a:hover {
 .slider-image img {
   width: 100%;
   height: auto;
-  animation: slideright 1.5s ease-in-out;
+  animation: slideright 1.5s ease;
 }
 @keyframes slideright {
   0% {
@@ -95,7 +98,6 @@ header nav a:hover {
 }
 
 .slider-action .slider__2 {
-  background-color: #648BF0;
   display: block;
 }
 
@@ -294,10 +296,32 @@ footer {
 
   .wrapper__slider {
     background-color: #F06C64;
+    animation: sliderighta 2s ease-in;
+  }
+  @keyframes sliderighta {
+    0% {
+      position: relative;
+      right: 100%;
+    }
+    100% {
+      position: relative;
+      right: 0px;
+    }
   }
 
   .slider-action {
     background-color: #648BF0;
+    animation: slideright 2s ease-in;
+  }
+  @keyframes slideright {
+    0% {
+      position: relative;
+      right: 100%;
+    }
+    100% {
+      position: relative;
+      right: 0px;
+    }
   }
 
   .wrapper__services {
@@ -385,7 +409,13 @@ footer {
     max-width: 375px;
   }
 
+  .logo {
+    display: grid;
+    justify-self: center;
+  }
+
   .burger-menu {
+    z-index: 1;
     display: grid;
     align-content: start;
     display: grid;
@@ -513,7 +543,13 @@ footer {
     max-width: 375px;
   }
 
+  .logo {
+    display: grid;
+    justify-self: center;
+  }
+
   .burger-menu {
+    z-index: 1;
     display: grid;
     align-content: start;
     display: grid;
@@ -567,7 +603,7 @@ footer {
   }
 
   .slider-image {
-    height: 178.38px;
+    height: 189.38px;
   }
 
   .slider, .slider__1 > img, .slider__2 > img {
