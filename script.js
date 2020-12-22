@@ -25,21 +25,28 @@ logo.addEventListener('click', (event) => {
     burger.classList.toggle('burger-menu');
 });
 
+
 /* slider */
-const bottom1 = document.querySelector('.slider-action-left');
-const bottom2 = document.querySelector('.slider-action-right');
+let active = 0;
+const imagesSlider = document.querySelectorAll('.slider-image');
+const buttonSlider = document.querySelectorAll('.slider-button');
 const slider = document.querySelector('.wrapper__slider');
+    for (const btn of buttonSlider) {
+        btn.addEventListener('click', function activeSlider() {
+            imagesSlider[active].classList.remove('active-img');
+            if (active + 1 == imagesSlider.length) {
+                active = 0;
+            }
+            else {
+               active++; 
+            } 
+            imagesSlider[active].classList.add('active-img');          
+            slider.classList.toggle('active-img-background');          
+  });
+}
 
-bottom1.addEventListener('click', (event) => {
-     slider.classList.toggle('slider-action');  
-});
-
-bottom2.addEventListener('click', (event) => {
-     slider.classList.toggle('slider-action');  
-});
 
 /* Portfolio */
-
 const buttonOne = document.querySelector('.button__portfolio-1');
 const buttonTwo = document.querySelector('.button__portfolio-2');
 const buttonThree = document.querySelector('.button__portfolio-3');
