@@ -236,7 +236,6 @@ header nav a:hover {
 .portfolio {
   max-width: 1020px;
   color: #666D89;
-  min-height: 864px;
   background: #2D303A;
   margin: -25px auto 0;
 }
@@ -276,13 +275,18 @@ header nav a:hover {
 }
 
 .portfolio_image {
-  height: 601px;
   margin: 0 40px 68px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
   overflow: hidden;
+}
+.portfolio_image_hidden {
+  display: none;
+}
+
+.tag {
+  display: none;
 }
 
 .wrapper__portfolio {
@@ -355,7 +359,6 @@ footer {
 
   .portfolio {
     max-width: 768px;
-    min-height: 1094.4px;
   }
   .portfolio h2 {
     padding: 59px 0 0 41px;
@@ -369,16 +372,14 @@ footer {
   }
 
   .portfolio_image {
-    height: 794px;
     margin: 0 41px 65.4px 39px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     grid-gap: 19.65px;
     overflow: hidden;
   }
 
-  .portfolio-image img {
+  .portfolio__image img {
     width: 216.19px;
     height: 183.76px;
   }
@@ -497,7 +498,6 @@ footer {
 
   .portfolio {
     max-width: 375px;
-    min-height: 844px;
   }
   .portfolio h2 {
     padding: 42px 0 0 30px;
@@ -516,17 +516,15 @@ footer {
   }
 
   .portfolio_image {
-    max-height: 554px;
-    margin: 0 30px;
+    margin: 0 30px 42px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 13px;
     grid-row-gap: 14px;
     overflow: hidden;
   }
 
-  .portfolio-image img {
+  .portfolio__image img {
     width: 151px;
     height: 128px;
   }
