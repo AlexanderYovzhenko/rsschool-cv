@@ -47,49 +47,52 @@ const slider = document.querySelector('.wrapper__slider');
 
 
 /* Portfolio */
-const buttonOne = document.querySelector('.button__portfolio-1');
-const buttonTwo = document.querySelector('.button__portfolio-2');
-const buttonThree = document.querySelector('.button__portfolio-3');
-const buttonFour = document.querySelector('.button__portfolio-4');
-const menu = document.querySelector('.portfolio_image');
+window.onload = function() {
 
-buttonOne.addEventListener('click', (event) => {
-        for (let i = menu.children.length; i >= 0; i--) {
-        menu.appendChild(menu.children[Math.random() * i | 0]);
-
-            buttonOne.classList.toggle('active-2');
-            buttonTwo.classList.remove('active-2');
-            buttonThree.classList.remove('active-2');
-            buttonFour.classList.remove('active-2');
+    addButtonsClickHandler();
 }
-})
-buttonTwo.addEventListener('click', (event) => {
-    for (let i = menu.children.length; i >= 0; i--) {
-    menu.appendChild(menu.children[Math.random() * i | 0]);
 
-             buttonOne.classList.remove('active-2');
-             buttonTwo.classList.toggle('active-2');
-             buttonThree.classList.remove('active-2');
-             buttonFour.classList.remove('active-2');
+const addButtonsClickHandler = () => {
+    document.querySelector('.menu_portfolio').addEventListener('click', (e) => {
+        if (e.target.classList.contains('button__portfolio')) {
+            let clickedButton = e.target;
+            removeSelectedButtons();
+            selectClickedButtons(clickedButton);
+            if (clickedButton.innerText === 'All') {
+                showAllDesign();
+            } else {
+                filterDesignBySelectedButton(clickedButton.innerText);
+            }
+        }
+    })
 }
-})
-buttonThree.addEventListener('click', (event) => {
-    for (let i = menu.children.length; i >= 0; i--) {
-    menu.appendChild(menu.children[Math.random() * i | 0]);
 
-            buttonOne.classList.remove('active-2');
-            buttonTwo.classList.remove('active-2');
-            buttonThree.classList.toggle('active-2');
-            buttonFour.classList.remove('active-2');
+const removeSelectedButtons = () => {
+    let buttons = document.querySelectorAll('.menu_portfolio .button__portfolio');
+    buttons.forEach(button__portfolio => {
+        button__portfolio.classList.remove('active-2');
+    })
 }
-})
-buttonFour.addEventListener('click', (event) => {
-    for (let i = menu.children.length; i >= 0; i--) {
-    menu.appendChild(menu.children[Math.random() * i | 0]);
 
-            buttonOne.classList.remove('active-2');
-            buttonTwo.classList.remove('active-2');
-            buttonThree.classList.remove('active-2');
-            buttonFour.classList.toggle('active-2');
+const selectClickedButtons = (clickedButton) => {
+    clickedButton.classList.add('active-2');
 }
-})
+
+const showAllDesign = () => {
+    let designs = document.querySelectorAll('.portfolio_image .portfolio__image');
+    designs.forEach(portfolio__image => {
+        portfolio__image.classList.remove('portfolio_image_hidden');
+    })
+}
+ 
+const filterDesignBySelectedButton = (selectedButton) => {
+    let designs = document.querySelectorAll('.portfolio_image .portfolio__image');
+    designs.forEach(design => {
+        design.classList.add('portfolio_image_hidden');
+        design.querySelectorAll('.tag').forEach(tag => {    
+            if (selectedButton === tag.innerText) {
+                design.classList.remove('portfolio_image_hidden');
+            }
+        })
+    })
+}
