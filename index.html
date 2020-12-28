@@ -8,40 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <title>Simple-singolo</title>
 </head>
-<div class="all" id="all__content">
-    <div class="wrapper__header" id="myhome">
-        <header>
-            <div id="burger-menu">
-                <h1>singolo<span>*</span></h1>
+<body class="body">
+    <div class="all" id="all__content">
+    <div class="wrapper wrapper__header" id="myhome">
+        <header class="header">
+            <div class="burger-menu">
+                <div class="header__burger__open">
+                    <span></span>
+                </div>
+                <a class="logo-burger" href="#"><h1>singolo<span>*</span></h1></a>
                 <nav class="link-pages" id="menu">
-                    <a class="active" href="#myhome">home</a>
-                    <a href="#myservices">services</a>
-                    <a href="#myportfolio">portfolio</a>
-                    <a href="#myabout">about</a>
-                    <a href="#mycontact">contact</a>
-        </nav>
+                    <a class="link__page active" href="#myhome">home</a>
+                    <a class="link__page" href="#myservices">services</a>
+                    <a class="link__page" href="#myportfolio">portfolio</a>
+                    <a class="link__page" href="#myabout">about</a>
+                    <a class="link__page" href="#mycontact">contact</a>
+                 </nav>
             </div>
-        <a href="#" class="logo"> <h1>singolo<span>*</span></h1></a>
-        <nav class="link-pages" id="menu">
-            <a class="active" href="#myhome">home</a>
-            <a href="#myservices">services</a>
-            <a href="#myportfolio">portfolio</a>
-            <a href="#myabout">about</a>
-            <a href="#mycontact">contact</a>
-        </nav>
+            <div class="header__burger">
+                <span></span>
+            </div>
+            <a href="#" class="logo"> <h1>singolo<span>*</span></h1></a>
+            <nav class="link-pages" id="menu">
+                <a class="link__page active" href="#myhome">home</a>
+                <a class="link__page" href="#myservices">services</a>
+                <a class="link__page" href="#myportfolio">portfolio</a>
+                <a class="link__page" href="#myabout">about</a>
+                <a class="link__page" href="#mycontact">contact</a>
+            </nav>
     </header>
     </div>
-    <div id="slider" class="wrapper__slider">
-            <div class="slider">
-                <div class="slider_content">
-                    <div class="slider-image active-img slider__1"><img src="./img/imageSlider/Slide-1.png" alt="Slide-1"></div>
-                    <div class="slider-image slider__2"><img src="./img/imageSlider/Slide-2.png" alt="Slide-2"></div>
-                </div>
-                <button class="slider-button slider-action-left"></button>
-                <button class="slider-button slider-action-right"></button>
+    <div class="wrapper wrapper__slider" id="slider">
+            <div class="slider">              
+                 <div class="slider__item"><img src="./img/imageSlider/Slide-1.png" alt="Slide-1"></div>
+                 <div class="slider__item"><img src="./img/imageSlider/Slide-2.png" alt="Slide-2"></div>
             </div>
     </div>
-    <div class="wrapper__services" id="myservices">
+    <div class="wrapper wrapper__services" id="myservices">
             <section class="services">
             <h2>Our Services</h2>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
@@ -49,19 +52,19 @@
              odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris 
              condimentum nibh.
             </p>
-            <div class="services-item">
-                <section class="services-item1">
+            <div class="services-items">
+                <section class="service__item">
                     <img src="img/icons/services-item-1.png" alt="1">
-                 <div class="item1">
+                 <div>
                      <h3>Custom Design</h3>
                      <p>Curabitur vestibulum eget mauris quis laoreet. 
                          Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
                      </p>
                  </div>
                  </section>
-                 <section class="services-item2">
+                 <section class="service__item">
                      <img src="img/icons/services-item-2.png" alt="2">
-                    <div class="item2">
+                    <div>
                          <h3>Inovative Ideas</h3>
                          <p>
                          Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, 
@@ -69,9 +72,9 @@
                          </p>
                     <div>
                  </section>
-                 <section class="services-item3">
+                 <section class="service__item">
                      <img src="img/icons/services-item-3.png" alt="3">
-                     <div class="item3">
+                     <div>
                          <h3>Love Is The Answer</h3>
                          <p>
                              Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, 
@@ -79,9 +82,9 @@
                          </p>
                     </div>
                  </section>
-                 <section class="services-item4">
+                 <section class="service__item">
                      <img src="img/icons/services-item-4.png" alt="4">
-                    <div class="item4">
+                    <div>
                          <h3>Responsive Layout</h3>
                          <p>
                              Sed porttitor placerat rhoncus. 
@@ -89,9 +92,9 @@
                          </p>
                     </div>
                  </section>
-                 <section class="services-item5">
+                 <section class="service__item">
                      <img src="img/icons/services-item-5.png" alt="5">
-                    <div class="item5">
+                    <div>
                          <h3>24/7 Support</h3>
                          <p>
                              Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. 
@@ -99,9 +102,9 @@
                          </p>
                     </div>
                  </section>
-                 <section class="services-item6">
+                 <section class="service__item">
                      <img src="img/icons/services-item-6.png" alt="6">
-                    <div class="item6"> 
+                    <div> 
                         <h3>Feel Like A Star</h3>
                          <p>
                              Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. 
@@ -112,63 +115,39 @@
             </div>
             </section>
     </div>
-    <div class="wrapper__portfolio" id="myportfolio">
+    <div class="wrapper wrapper__portfolio" id="myportfolio">
             <div class="portfolio">
             <h2>Portfolio</h2>
             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
             </p>
-            <nav class="menu_portfolio">
-                <button class="button__portfolio button__portfolio-1">All</button>
-                <button class="button__portfolio button__portfolio-2">Web Design</button>
-                <button class="button__portfolio button__portfolio-3">Graphic Design</button>
-                <button class="button__portfolio button__portfolio-4">Artwork</button>
+            <nav class="menu-portfolio">
+                <button class="button__portfolio">All</button>
+                <button class="button__portfolio">Web Design</button>
+                <button class="button__portfolio">Graphic Design</button>
+                <button class="button__portfolio">Artwork</button>
             </nav>  
-             <div class="portfolio_image">
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-1.png" alt="image1">
-                    <span class="tag">Web Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-2.png" alt="image2">
-                    <span class="tag">Web Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-3.png" alt="image3">
-                    <span class="tag">Web Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-4.png" alt="image4">
-                    <span class="tag">Web Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-5.png" alt="image5">
-                    <span class="tag">Graphic Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-6.png" alt="image6">
-                    <span class="tag">Graphic Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-7.png" alt="image7">
-                    <span class="tag">Graphic Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-8.png" alt="image8">
-                    <span class="tag">Graphic Design</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-9.png" alt="image9">
-                    <span class="tag">Artwork</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-10.png" alt="image10">
-                    <span class="tag">Artwork</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-11.png" alt="image11">
-                    <span class="tag">Artwork</span>
-                </div>
-                 <div class="portfolio__image"><img src="img/imagePortfolio/portfolio-12.png" alt="image12">
-                    <span class="tag">Artwork</span>
-                </div>
+             <div class="portfolio-images">
+                 <div class="portfolio__item" data-tag="Web Design"><img src="img/imagePortfolio/portfolio-1.png" alt="image1"></div>
+                 <div class="portfolio__item" data-tag="Web Design"><img src="img/imagePortfolio/portfolio-2.png" alt="image2"></div>
+                 <div class="portfolio__item" data-tag="Web Design"><img src="img/imagePortfolio/portfolio-3.png" alt="image3"></div>
+                 <div class="portfolio__item" data-tag="Web Design"><img src="img/imagePortfolio/portfolio-4.png" alt="image4"></div>
+                 <div class="portfolio__item" data-tag="Graphic Design"><img src="img/imagePortfolio/portfolio-5.png" alt="image5"></div>
+                 <div class="portfolio__item" data-tag="Graphic Design"><img src="img/imagePortfolio/portfolio-6.png" alt="image6"></div>
+                 <div class="portfolio__item" data-tag="Graphic Design"><img src="img/imagePortfolio/portfolio-7.png" alt="image7"></div>
+                 <div class="portfolio__item" data-tag="Graphic Design"><img src="img/imagePortfolio/portfolio-8.png" alt="image8"></div>
+                 <div class="portfolio__item" data-tag="Artwork"><img src="img/imagePortfolio/portfolio-9.png" alt="image9"></div>
+                 <div class="portfolio__item" data-tag="Artwork"><img src="img/imagePortfolio/portfolio-10.png" alt="image10"></div>
+                 <div class="portfolio__item" data-tag="Artwork"><img src="img/imagePortfolio/portfolio-11.png" alt="image11"></div>
+                 <div class="portfolio__item" data-tag="Artwork"><img src="img/imagePortfolio/portfolio-12.png" alt="image12"></div>
              </div>
         </div>
     </div>
-    <div class="wrapper__footer" id="mycontact">
-        <footer id="myabout">
-        <div class="footer">
+    <div class="wrapper wrapper__footer" id="myabout">
+        <footer class="footer">
+        <div class="copyright">
             <p>&copy;Copyright 2013</p>
         </div>    
-         <div class="social">
+         <div class="social" id="mycontact">
              <a href="https://www.facebook.com/"><img src="img/icons/ico-facebook.png" alt="this facebook"></a>
              <a href="https://www.google.com/"><img src="img/icons/ico-google-plus.png" alt="this google"></a>
              <a href="https://twitter.com/"><img src="img/icons/ico-twitter.png" alt="this twitter"></a>
@@ -176,7 +155,9 @@
          </div>
         </footer>
     </div>
-</div>
-<script src="script.js"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="slick.min.js "></script>
+    <script src="script.js"></script>
 </body>
 </html>
