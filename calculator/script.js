@@ -32,10 +32,8 @@ for (let i = 0; i < clearBtns.length; i++) {
 
 decimalBtn.addEventListener('click', decimal);
 
-resultBtn.addEventListener('click', result);
-
 function numberPress(number) {
-    if ( memoryNewNumber) {
+    if (memoryNewNumber) {
         display.value = number;
         memoryNewNumber = false;
     } else {
