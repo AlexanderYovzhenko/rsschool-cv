@@ -32,7 +32,9 @@
   .controls {
     margin-bottom: 50px;
   }
-
+  .controls>div {
+    display: inline-block;
+  }
   input {
     width: 100px;
   }
