@@ -11,8 +11,8 @@
   font-family: "Montserrat", sans-serif;
 }
 .vid-container video{
-  width: auto;
-  height: auto; 
+  min-width: 100%;
+  min-height: 100%; 
 }
 .time-select,
 .sound-picker {
