@@ -12,7 +12,7 @@
 }
 .vid-container video{
   width: auto;
-  height: 100%; 
+  height: auto; 
 }
 .time-select,
 .sound-picker {
