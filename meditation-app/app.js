@@ -16,7 +16,7 @@ outline.style.strokeDashoffset = outlineLength;
 outline.style.strokeDasharray = outlineLength;
 timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
   fakeDuration % 60
-)}`;
+)}0`;
 
 sounds.forEach(sound => {
   sound.addEventListener("click", function() {
