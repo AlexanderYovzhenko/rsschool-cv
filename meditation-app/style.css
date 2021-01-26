@@ -79,10 +79,12 @@
 .player-container svg circle {
   transition: all 0.2s ease-in-out;
 }
+.play {
+  margin: 100%;
+}
 .play:hover {
   background-color:red;
   border-radius: 5%;
-  margin: 5px;
 }
 .time-display {
   color: white;
