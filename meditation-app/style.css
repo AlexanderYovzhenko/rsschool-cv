@@ -12,7 +12,7 @@
 }
 .vid-container video{
   min-width: 100%;
-  min-height: 100%; 
+  min-height: 100%;
 }
 .time-select,
 .sound-picker {
@@ -95,6 +95,5 @@ video {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 100%;
   z-index: -10;
 }
