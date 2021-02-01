@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 25px; 
+  }
+h1 {
+  text-align: center;
+  color: green;
+}
+.palette {
+  width: 300px;
+  height: 550px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(191, 195, 221, 0.8);
+  border-radius: 5%;
+}
+.line, .color:hover {
+  cursor: pointer;
+}
+.list-line {
+  color: rgb(0, 0, 0);
+  
+}
+
+.list-color li:nth-child(1) {
+  color: rgb(255, 0, 0);
+}
+.list-color li:nth-child(2) {
+  color: rgb(208, 255, 0);
+}
+.list-color li:nth-child(3) {
+  color: rgb(0, 255, 42);
+}
+.list-color li:nth-child(4) {
+  color: rgb(38, 0, 255);
+}
+.list-color li:nth-child(5) {
+  color: rgb(255, 0, 200);
+}

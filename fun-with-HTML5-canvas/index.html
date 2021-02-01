@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+    <canvas id="draw" width="800" height="800"></canvas>
+    
+    <div class="palette">
+      <h1>palette&#9998;</h1>
+      <form action="post" class="form">
+        <ul class="list-line">
+          <li><input type="radio" class="line" data-line="1" checked name="line"> -</li>
+          <li><input type="radio" class="line" data-line="25" name="line"> --</li>
+          <li><input type="radio" class="line" data-line="50" name="line"> ---</li>
+          <li><input type="radio" class="line" data-line="75" name="line"> ----</li>
+          <li><input type="radio" class="line" data-line="100" name="line"> -----</li>
+        </ul>
+
+        <ul class="list-color">
+          <li><input type="radio" class="color" data-color="1" checked name="color"> Red</li>
+          <li><input type="radio" class="color" data-color="60" name="color"> Yellow</li>
+          <li><input type="radio" class="color" data-color="135" name="color"> Green</li>
+          <li><input type="radio" class="color" data-color="240" name="color"> Blue</li>
+          <li><input type="radio" class="color" data-color="300" name="color"> Pink</li>
+        </ul>  
+        
+        <ul class="list-effect">
+          <li><input type="radio" class="effect" data-effect="source-over" checked name="effect"> &#10002;</li>
+          <li><input type="radio" class="effect" data-effect="xor" name="effect"> &#10001;</li>
+        </ul>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
