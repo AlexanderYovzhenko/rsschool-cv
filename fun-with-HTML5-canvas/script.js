@@ -5,7 +5,7 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.lineWidth = 1;
+ctx.lineWidth = 5;
 ctx.globalCompositeOperation = 'source-over';
 
 let isDrawing = false;
@@ -15,28 +15,41 @@ let hue = 0;
 let direction = true;
 
 //palette
-const line = document.querySelectorAll('.line');
-const color = document.querySelectorAll('.color');
-const effect = document.querySelectorAll('.effect');
+const lineSizeElements = document.querySelectorAll('.width-line');
+const lineColorElements = document.querySelectorAll('.color-line');
+const lineEffectElements = document.querySelectorAll('.effect-line');
+const listTextColors = document.querySelectorAll('.color-element');
+const lineSizeElementRange = document.querySelector('.width-line-range');
 
 //width line
-for(let el of line) {
-    el.addEventListener('click', function switchLine() {
-        ctx.lineWidth = el.dataset.line;
+for(let el of lineSizeElements) {
+    el.addEventListener('click', function switchSizeLine(e) {
+        ctx.lineWidth = e.currentTarget.dataset.line;
+        lineSizeElementRange.value = ctx.lineWidth;
     });
 }
 
+//width line range
+lineSizeElementRange.addEventListener('mousemove', () => {
+  ctx.lineWidth = lineSizeElementRange.value;
+});
+
 //color
-for(let el of color) {
-    el.addEventListener('click', function switchColor() {
-        hue = el.dataset.color;
+for(let el of lineColorElements) {
+    el.addEventListener('click', function switchColor(e) {
+        hue = e.currentTarget.dataset.color;
   });
 }
 
+//color text
+for(let el of listTextColors) {
+   el.style.color = el.innerText;  
+}
+
 //effect
-for(let el of effect) {
-    el.addEventListener('click', function switchEffect() {
-        ctx.globalCompositeOperation = el.dataset.effect;
+for(let el of lineEffectElements) {
+    el.addEventListener('click', function switchEffect(e) {
+        ctx.globalCompositeOperation = e.currentTarget.dataset.effect;
   });
 }
 
@@ -50,8 +63,11 @@ function draw(e) {
   ctx.lineTo(e.offsetX, e.offsetY);
   ctx.stroke();
   [lastX, lastY] = [e.offsetX, e.offsetY];
- 
 }   
+
+function isNotDrawing() {
+ return isDrawing = false;
+}
 
 canvas.addEventListener('mousedown', (e) => {
   isDrawing = true;
@@ -59,5 +75,5 @@ canvas.addEventListener('mousedown', (e) => {
 });
 
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('mouseup', isNotDrawing);
+canvas.addEventListener('mouseout', isNotDrawing);
