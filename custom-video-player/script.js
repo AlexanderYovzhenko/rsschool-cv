@@ -14,7 +14,7 @@ function togglePlay() {
   const method = video.paused ? 'play' : 'pause';
   video[method]();
 }
-console.log(video);
+
 function updateButton(e) {
   const icon = e.currentTarget.paused ? '►' : '❚ ❚';
   toggle.textContent = icon;
@@ -45,14 +45,14 @@ function fullScreenTo() {
 
 /* Hook up the event listeners */
 video.addEventListener('click', togglePlay);
-video.addEventListener('play', (e) => updateButton(e));
-video.addEventListener('pause', (e) =>  updateButton(e));
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', (e) => skip(e)));
-ranges.forEach(range => range.addEventListener('change', (e) => handleRangeUpdate(e)));
-ranges.forEach(range => range.addEventListener('mousemove', (e) => handleRangeUpdate(e)));
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
 
 let mousedown = false;
 progress.addEventListener('click', scrub);
