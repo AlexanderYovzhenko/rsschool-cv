@@ -11,20 +11,16 @@
     <div class="palette">
       <h1>palette&#9998;</h1>
       <form action="post" class="form">
-        <ul class="list-lines">
-          <li><input type="radio" class="width-line" data-line="5" checked name="line"> ▏(5px)</li>
-          <li><input type="radio" class="width-line" data-line="15" name="line"> ▎(15px)</li>
-          <li><input type="radio" class="width-line" data-line="25" name="line"> ▍(25px)</li>
-          <li><input type="radio" class="width-line" data-line="35" name="line"> ▋(35px)</li>
-          <li><input type="radio" class="width-line" data-line="45" name="line"> ▊(45px)</li>
-          <span>0</span><input class="width-line-range" type="range" min="5" max="100" value="5"><span>100</span>
+        <ul class class="list-lines">
+          <li class="count-px"><span>5 px</span></li><br>
+          <li><span>1</span><input class="width-line-range" type="range" min="1" max="100" value="5"><span>100</span></li>
         </ul>
         <ul class="list-colors">
-          <li class="color-element"><input type="radio" class="color-line" data-color="1" checked name="color"> Red</li>
-          <li class="color-element"><input type="radio" class="color-line" data-color="60" name="color"> Yellow</li>
-          <li class="color-element"><input type="radio" class="color-line" data-color="135" name="color"> Green</li>
-          <li class="color-element"><input type="radio" class="color-line" data-color="240" name="color"> Blue</li>
-          <li class="color-element"><input type="radio" class="color-line" data-color="300" name="color"> Pink</li>
+          <li class="red"><input type="radio" class="color-line" data-color="1" checked name="color"> Red</li>
+          <li class="yellow"><input type="radio" class="color-line" data-color="60" name="color"> Yellow</li>
+          <li class="green"><input type="radio" class="color-line" data-color="135" name="color"> Green</li>
+          <li class="blue"><input type="radio" class="color-line" data-color="240" name="color"> Blue</li>
+          <li class="pink"><input type="radio" class="color-line" data-color="300" name="color"> Pink</li>
         </ul>  
         <ul class="list-effects">
           <li><input type="radio" class="effect-line" data-effect="source-over" checked name="effect"> &#10002;</li>

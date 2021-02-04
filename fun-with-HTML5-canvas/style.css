@@ -10,16 +10,41 @@ h1 {
 }
 .palette {
   width: 300px;
-  height: 630px;
+  height: 500px;
   position: fixed;
   top: 0;
   right: 0;
   background: rgba(191, 195, 221, 0.8);
   border-radius: 5%;
 }
+
+.count-px {
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 15%;
+  list-style-type: none;
+}
+
 .line, .color:hover {
   cursor: pointer;
 }
-.list-lines {
-  color: rgb(0, 0, 0); 
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.pink {
+  color: pink;
 }

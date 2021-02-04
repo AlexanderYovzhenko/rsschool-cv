@@ -14,24 +14,18 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
+
 //palette
-const lineSizeElements = document.querySelectorAll('.width-line');
 const lineColorElements = document.querySelectorAll('.color-line');
 const lineEffectElements = document.querySelectorAll('.effect-line');
-const listTextColors = document.querySelectorAll('.color-element');
 const lineSizeElementRange = document.querySelector('.width-line-range');
+const lineSizePx = document.querySelector('.count-px');
 
-//width line
-for(let el of lineSizeElements) {
-    el.addEventListener('click', function switchSizeLine(e) {
-        ctx.lineWidth = e.currentTarget.dataset.line;
-        lineSizeElementRange.value = ctx.lineWidth;
-    });
-}
 
 //width line range
 lineSizeElementRange.addEventListener('mousemove', () => {
   ctx.lineWidth = lineSizeElementRange.value;
+  lineSizePx.innerText = `${ctx.lineWidth} px`;
 });
 
 //color
@@ -39,11 +33,6 @@ for(let el of lineColorElements) {
     el.addEventListener('click', function switchColor(e) {
         hue = e.currentTarget.dataset.color;
   });
-}
-
-//color text
-for(let el of listTextColors) {
-   el.style.color = el.innerText;  
 }
 
 //effect
