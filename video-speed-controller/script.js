@@ -14,4 +14,4 @@ function handleMove(e) {
     video.playbackRate = playbackRate;
   }
 
-speed.addEventListener('mousemove', (e) => handleMove(e));
+speed.addEventListener('mousemove', handleMove);
