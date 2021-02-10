@@ -89,7 +89,7 @@ function localStorageRecord() {
       record.setItem('record', score); 
       recordText.innerText = `You record: ${record.getItem('record')}`; 
   } 
-    else if(record.getItem('record') < score) {
+    else if(+record.getItem('record') < score) {
       record.setItem('record', score); 
       recordText.innerText = `You record: ${record.getItem('record')}`; 
     }
