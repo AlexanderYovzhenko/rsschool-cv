@@ -12,20 +12,21 @@ let minTime = 0;
 let maxTime = 0;
 let levelTime = 10000;
 let startGameActive = false;
-let record = localStorage;
+let level;
 
 function levelSelection(e) {
-  if(+e.target.dataset.level === 1) {
+  level = +e.target.dataset.level;
+  if(level === 1) {
       minTime = 1000;
       maxTime = 1500;
       levelSelectionLook(e);  
   }  
-  if(+e.target.dataset.level === 2) {
+  if(level === 2) {
       minTime = 500;
       maxTime = 1000; 
       levelSelectionLook(e);    
   }  
-  if(+e.target.dataset.level === 3) {
+  if(level === 3) {
       minTime = 200;
       maxTime = 500;
       levelSelectionLook(e); 
@@ -37,7 +38,7 @@ function levelSelectionLook(e) {
     startGameActive = false;
     e.target.classList.add('active-button');
     for(let i of levels) {
-      if(+e.target.dataset.level === +i.dataset.level) continue;
+      if(level === +i.dataset.level) continue;
       i.classList.remove('active-button') 
     } 
 }
@@ -85,17 +86,13 @@ function bonk(e) {
 }
 
 function localStorageRecord() {
-    if(record.getItem('record') === ('' || null)) {
-      record.setItem('record', score); 
-      recordText.innerText = `You record: ${record.getItem('record')}`; 
-  } 
-    else if(+record.getItem('record') < score) {
-      record.setItem('record', score); 
-      recordText.innerText = `You record: ${record.getItem('record')}`; 
-    }
-    else {
-      recordText.innerText = `You record: ${record.getItem('record')}`;
-    }
+  if(+localStorage.getItem('record') < score) {
+      localStorage.setItem('record', score); 
+      recordText.innerText = `You record: ${localStorage.getItem('record')}`; 
+  }
+  else {
+      recordText.innerText = `You record: ${+localStorage.getItem('record')}`;
+  }
 }
 
 localStorageRecord();
