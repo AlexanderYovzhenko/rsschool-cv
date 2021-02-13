@@ -12,7 +12,8 @@ const Keyboard = {
 
     properties: {
         value: "",
-        capsLock: false
+        capsLock: false,
+        language: true
     },
 
     init() {
@@ -43,11 +44,18 @@ const Keyboard = {
 
     _createKeys() {
         const fragment = document.createDocumentFragment();
-        const keyLayout = [
+        const keyLayoutEn = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?", "language",
+            "space"
+        ];
+        const keyLayoutRu = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
+            "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ",
+            "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "enter",
+            "done", "я", "ч", "с", "м", "и", "т", "ь", ",", ".", "?", "language",
             "space"
         ];
 
@@ -55,11 +63,18 @@ const Keyboard = {
         const createIconHTML = (icon_name) => {
             return `<i class="material-icons">${icon_name}</i>`;
         };
+        
+        let keyLayout = [];
+
+        this.properties.language ? keyLayout = keyLayoutEn : keyLayout = keyLayoutRu;
+        
 
         keyLayout.forEach(key => {
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["backspace", "p", "enter", "?"].indexOf(key) !== -1;
-
+            let insertLineBreak = [];
+            this.properties.language ? insertLineBreak = ["backspace", "p", "enter", "language"].indexOf(key) !== -1 :
+                                       insertLineBreak = ["backspace", "ъ", "enter", "language"].indexOf(key) !== -1; 
+            
             // Add attributes/classes
             keyElement.setAttribute("type", "button");
             keyElement.classList.add("keyboard__key");
@@ -81,7 +96,9 @@ const Keyboard = {
                     keyElement.innerHTML = createIconHTML("keyboard_capslock");
 
                     keyElement.addEventListener("click", () => {
+                        this.properties.capsLock = !this.properties.capsLock;
                         this._toggleCapsLock();
+                        
                         keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
                     });
 
@@ -96,6 +113,19 @@ const Keyboard = {
                         this._triggerEvent("oninput");
                     });
 
+                    break;
+
+                case "language":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.innerHTML = createIconHTML("language");
+                    
+                    keyElement.addEventListener('click', () => {
+                        this.properties.language = !this.properties.language;
+                        
+                        this._switchLanguage();
+                        this._toggleCapsLock();
+                    });
+        
                     break;
 
                 case "space":
@@ -132,12 +162,12 @@ const Keyboard = {
             }
 
             fragment.appendChild(keyElement);
-
+            
             if (insertLineBreak) {
                 fragment.appendChild(document.createElement("br"));
             }
-        });
-
+            });      
+            
         return fragment;
     },
 
@@ -147,14 +177,26 @@ const Keyboard = {
         }
     },
 
-    _toggleCapsLock() {
-        this.properties.capsLock = !this.properties.capsLock;
-
+    _toggleCapsLock(keyElement) {
+        keyElement
+        // keyElement.classList.add("keyboard__key--active");
         for (const key of this.elements.keys) {
             if (key.childElementCount === 0) {
                 key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
             }
         }
+    },
+
+    _switchLanguage() {
+        while(this.elements.keysContainer.lastChild) 
+        this.elements.keysContainer.removeChild(this.elements.keysContainer.lastChild);                       
+        this.elements.keysContainer.appendChild(this._createKeys()); 
+                                      
+        this.elements.keys = document.querySelectorAll(".keyboard__key");
+        this.elements.keys.forEach(item => this.properties.capsLock 
+            ? item.classList.add("keyboard__key--active")
+            :  item.classList.remove("keyboard__key--active"));
+        
     },
 
     open(initialValue, oninput, onclose) {

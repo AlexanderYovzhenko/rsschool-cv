@@ -1,19 +1,30 @@
-.heading {
-    text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(./sutterlin-1362879.jpg);
 }
 
-.textarea {
-    width: 500px;
-    height: 200px;
+.heading {
+    text-align: center;
+    color: lightcyan;
+    font-size: 2.5rem;
+}
+
+.textarea { 
+    width: 600px;
+    height: 300px;
     margin: 0 auto;
     position: relative;
 }
 
 .use-keyboard-input {
+    background-image: url(./winter-4734976.jpg);
+    color: darkred;
     position: absolute;
     top: 30px;  
-    width: 500px;
-    height: 200px; 
+    width: 600px;
+    height: 300px;
+    font-size: 1.5rem; 
 }
 
 .keyboard {
@@ -37,15 +48,15 @@
 }
 
 .keyboard__key {
-    height: 45px;
+    height: 50px;
     width: 6%;
-    max-width: 90px;
+    max-width: 70px;
     margin: 3px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: none;
     background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    font-size: 1.05rem;
+    color: yellowgreen;
+    font-size: 1.5rem;
     outline: none;
     cursor: pointer;
     display: inline-flex;
@@ -62,7 +73,8 @@
 }
 
 .keyboard__key--wide {
-    width: 12%;
+    min-width: 6%;
+    max-width: 20%;
 }
 
 .keyboard__key--extra-wide {
