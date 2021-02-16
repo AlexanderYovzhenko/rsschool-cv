@@ -83,6 +83,7 @@ function peep() {
 }
  
 function startGame() {
+  clearInterval(timerSecond);
   seeTimeLevel.innerText = 20;
   levelTimeCalc();
   if(startGameActive === true) return;  
