@@ -26,6 +26,7 @@ function levelTimeCalc() {
 
 function levelSelection(e) {
   level = +e.target.dataset.level;
+  localStorageRecord();
   levelSelectionLook(e);
   seeTimeLevel.innerText = `choose level`;
   clearInterval(timerSecond);
@@ -104,12 +105,13 @@ function bonk(e) {
 }
 
 function localStorageRecord() {
-  if(+localStorage.getItem('record') < score) {
-      localStorage.setItem('record', score); 
-      recordText.innerText = `You record: ${localStorage.getItem('record')}`; 
-  }
+  if(+localStorage.getItem(level) < score) {
+      localStorage.setItem(level, score); 
+      recordText.innerText = `You record  in level: ${localStorage.getItem(level)}`; 
+      score = 0;
+    }
   else {
-      recordText.innerText = `You record: ${+localStorage.getItem('record')}`;
+      recordText.innerText = `You record in level: ${+localStorage.getItem(level)}`;
   }
 }
 
