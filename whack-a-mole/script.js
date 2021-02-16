@@ -9,6 +9,7 @@ const seeTimeLevel = document.querySelector('.time');
 let lastHole;
 let timeUp = false;
 let score = 0;
+let scoreGlobal;
 let minTime = 0;
 let maxTime = 0;
 let startGameActive = false;
@@ -99,19 +100,20 @@ function startGame() {
 function bonk(e) {
   if(!e.isTrusted) return; // cheater!
   score++;
+  scoreGlobal = score;
   this.parentNode.classList.remove('up');
   scoreBoard.textContent = score; 
   localStorageRecord();
 }
 
 function localStorageRecord() {
-  if(+localStorage.getItem(level) < score) {
-      localStorage.setItem(level, score); 
-      recordText.innerText = `You record  in level: ${localStorage.getItem(level)}`; 
-      score = 0;
+  if(+localStorage.getItem(level) < scoreGlobal) {
+    localStorage.setItem(level, scoreGlobal); 
+    recordText.innerText = `You record  in level: ${localStorage.getItem(level)}`; 
+    scoreGlobal = 0;
     }
   else {
-      recordText.innerText = `You record in level: ${+localStorage.getItem(level)}`;
+    recordText.innerText = `You record in level: ${+localStorage.getItem(level)}`;
   }
 }
 
