@@ -4,33 +4,48 @@ const moles = document.querySelectorAll('.mole');
 const levels = document.querySelectorAll('.level');
 const startButton = document.querySelector('.start-button');
 const recordText = document.querySelector('.record-text');
+const seeTimeLevel = document.querySelector('.time');
 
 let lastHole;
 let timeUp = false;
 let score = 0;
 let minTime = 0;
 let maxTime = 0;
-let levelTime = 10000;
 let startGameActive = false;
 let level;
+let timerSecond;
+let timeLevel;
+
+function levelTimeCalc() { 
+   timerSecond = setInterval(() => {
+    if(+seeTimeLevel.innerText > 0) {
+      seeTimeLevel.innerText -= 1  
+    }
+  }, 1000); 
+}
 
 function levelSelection(e) {
   level = +e.target.dataset.level;
-  if(level === 1) {
-      minTime = 1000;
-      maxTime = 1500;
-      levelSelectionLook(e);  
-  }  
-  if(level === 2) {
+  levelSelectionLook(e);
+  seeTimeLevel.innerText = `choose level`;
+  clearInterval(timerSecond);
+  clearTimeout(timeLevel);
+  switch(level) {
+    case 1:
+      minTime = 700;
+      maxTime = 800;
+      break; 
+   
+    case 2: 
+      minTime = 600;
+      maxTime = 700; 
+      break;    
+   
+    case 3: 
       minTime = 500;
-      maxTime = 1000; 
-      levelSelectionLook(e);    
+      maxTime = 600;
+      break; 
   }  
-  if(level === 3) {
-      minTime = 200;
-      maxTime = 500;
-      levelSelectionLook(e); 
-  }     
 }
 
 function levelSelectionLook(e) {
@@ -68,13 +83,15 @@ function peep() {
 }
  
 function startGame() {
+  seeTimeLevel.innerText = 20;
+  levelTimeCalc();
   if(startGameActive === true) return;  
   startGameActive = true;  
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;
   peep();
-  setTimeout(() => {timeUp = true, startGameActive = false}, levelTime);
+  timeLevel = setTimeout(() => {timeUp = true, startGameActive = false, seeTimeLevel.innerText = 'Game over!'}, 20000);
 }
 
 function bonk(e) {
