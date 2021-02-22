@@ -16,6 +16,7 @@ let level = 0;
 let timerSecond;
 let timeLevel;
 let moleTime;
+let hole = randomHole(holes);
 
 function levelTimeCalc() { 
    timerSecond = setInterval(() => {
@@ -72,7 +73,7 @@ function randomHole(holes) {
   lastHole = hole;
   return hole;
 }
-let hole = randomHole(holes); 
+ 
 function peep() {
   const time = randomTime(minTime, maxTime);
   hole = randomHole(holes); 
