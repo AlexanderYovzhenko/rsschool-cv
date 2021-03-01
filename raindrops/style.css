@@ -1,0 +1,519 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 100%;
+    margin: auto;
+}
+
+.switch-full {
+    max-width: 800px;
+}
+
+
+/* Game field */
+
+.game-field {
+    flex-grow: 5;
+    background: url(./img/pxfuel-1.jpg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.change-topic-game-field {
+    background: url(./img/pxfuel-2.jpg);
+}
+
+.background {
+    flex-grow: 5;
+    width: 100%;
+    position: relative;
+}
+
+.good-game::after {
+    content: 'Good game!!!';
+    width: 70%;
+    height: 50%;
+    font-size: 70px;
+    color: greenyellow;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.start-buttons {
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    margin: 10% 30%;
+    text-align: center;
+}
+
+.start, .how-to-play {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 40%;
+    width: 90%;
+    height: 20%;
+    border-radius: 5%;
+    border: none;
+}
+
+.start:active, .how-to-play:active {
+    border: none;
+    border-radius: 5%;
+    box-shadow: 1px 1px 8px black inset;
+}
+
+.start {
+    background-color: greenyellow;
+    box-shadow: 3px 4px 8px green;
+}
+
+.how-to-play {
+    background-color: yellow;
+    box-shadow: 3px 4px 8px orange;
+}
+
+.rain-drop {
+    width: 120px;
+    height: 120px;
+    background: lightblue;
+    box-shadow: 0px 0px 10px black;
+    border-radius:  0 50% 50% 50%;
+    transform: rotate(45deg);
+    transition: linear;
+    position: absolute;
+    top: -30%;
+    left: 55%;
+} 
+
+.rain-drop-bonus {
+    width: 120px;
+    height: 120px;
+    background: orange;
+    box-shadow: 0px 0px 10px black;
+    border-radius:  0 50% 50% 50%;
+    transform: rotate(45deg);
+    transition: linear;
+    position: absolute;
+    top: -30%;
+    left: 55%;
+}
+
+.how-to-play-rain-drop::after {
+    content: 'This is your task';
+    text-align: center;
+    width: 150px;
+    background: burlywood;
+    font-size: 30px;
+    position: absolute;
+    bottom: -40%;
+    left: 45%;
+    transform: rotate(-45deg);
+}
+
+.math-problem {
+    padding-right: 5%;
+    transform: rotate(-45deg);
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.math-problem span {
+    font-weight: 800;
+    padding-right: 65%;
+    font-size: 2.2rem;
+}
+
+.small-drop {
+    width: 0px;
+    height: 0px;
+    transition: 2s!important;
+}
+
+.small-drop .math-problem {
+    display: none;
+}
+
+.rain-drop-fal {
+    background-color: red;
+    margin-top: 1000px;
+    transition: 3s!important;
+}
+
+.result { 
+    display: none;
+    width: 70%;
+    height: 80%;
+    background-color: rgba(157, 255, 0, 0.7);
+    margin: 5% auto;
+    border-radius: 5%;
+    border-top-right-radius: 0%;
+    text-align: center;
+    font-size: 2rem;
+    transition: 1.5s;
+    position: relative;
+}
+
+.reset-game {
+    position: absolute;
+    top: 1%;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.reset-game:active {
+    border: none;
+    box-shadow: none;
+    top: 1.2%;
+    right: -0.2%;
+}
+
+.water-level {
+    flex-grow: 1; 
+    width: 100%;
+    background: linear-gradient(rgb(113, 225, 233), rgb(139, 216, 139));
+    opacity: .95;
+    animation: wave 4s ease-in-out infinite;
+    transition: 2s;
+    position: relative;
+}
+
+.how-to-play-water-level::after {
+    content: 'The water level rises when a drop falls';
+    width: 100%;
+    text-align: center;
+    background: burlywood;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes wave {
+    0%, 100% {
+        clip-path: polygon(0 4%, 13% 1%, 25% 2%, 40% 7%, 55% 12%, 69% 15%, 86% 15%, 100% 11%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0 16%, 13% 18%, 27% 18%, 42% 16%, 57% 9%, 71% 4%, 86% 1%, 100% 2%, 100% 100%, 0% 100%);
+    }        
+}
+
+.hiden {
+    display: none;
+}
+
+
+/* Calculated field */
+
+.calculated-field {
+    max-width: 400px;
+    flex-grow: 2;
+    background: rgb(170, 189, 170);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.score {
+    background-color: blanchedalmond;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 3px 3px 10px chocolate ;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.score span {
+    flex-grow: 15;
+}
+
+.score-lives {
+    width: 100%;
+    text-align: center;
+    font-size: 30px; 
+    margin: 0 35%;  
+}
+
+.how-to-play-score::after {
+    content: '↑↑↑This is your game score↑↑↑';
+    width: 100%;
+    text-align: center;
+    background: burlywood;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.full-screen {
+    align-self: start;
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+}
+
+.full-screen:active {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px royalblue inset;
+}
+
+.calculation {
+    background-color: rgb(228, 226, 154);
+    width: 80%;
+    height: 50%;
+    margin: 10% auto 0;
+    border: 10px double grey;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 15px rgb(124, 126, 124);
+}
+
+.how-to-play-calculation::before {
+    content: '↓↓↓Here you enter the result of the task↓↓↓';
+    width: 100%;
+    text-align: center;
+    background: burlywood;
+    font-size: 30px;
+}
+
+.scoreboard {
+    max-width: 100%;
+    flex-grow: 3;
+    background-color: rgb(185, 179, 179);
+    border-radius: 10px 10px 0 0;
+}
+
+.scoreboard-number {
+    color: black;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    text-align: center;
+}
+
+.mistake {
+    box-shadow: 2px 2px 20px red inset;
+    border-radius: 10px 10px 0 0;
+}
+
+.scoreboard-number:focus, .scoreboard-number:active {
+    border: none;
+    outline: none;
+}
+
+.zero {
+    grid-area: zer;
+    border-bottom-left-radius: 10px;
+}
+.delete {
+    grid-area: delete;
+}
+.enter {
+    grid-area: enter; 
+    border-bottom-right-radius: 10px;
+}
+.one {
+    grid-area: one;
+}
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.four {
+    grid-area: four;
+}
+.five {
+    grid-area: five;
+}
+.six {
+    grid-area: six;
+}
+.seven {
+    grid-area: seven;
+}
+.eight {
+    grid-area: eight;
+}
+.ten {
+    grid-area: ten;
+}
+.clear {
+    grid-area: clear;
+}
+
+.buttons {
+    flex-grow: 7;
+    display: grid;
+    grid-template-areas: 
+    'seven eight ten clear'
+    'four five six clear'
+    'one two three enter'
+    'zer zer delete enter';  
+}
+
+.button{
+    text-align: center;
+    border: 1px solid grey;
+    cursor: pointer;
+    background: -webkit-linear-gradient(top,#d2d2d2,#ddd);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    border: 1px solid rebeccapurple;
+    box-shadow: 0px 0px 5px rebeccapurple inset;
+}
+
+.how-to-play-settings::before {
+    content: 'These are the game settings, set ▼ before the game▼';
+    text-align: center;
+    background: burlywood;
+    font-size: 30px;
+    margin: 0  0 0 10px  ;
+}
+
+
+.list-arithmetic-operations, .list-number-limit-one, .list-number-limit-two {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+    margin-left: -10%;
+}
+
+.arithmetic-operation, .limit-one, .limit-two {
+    transform: scale(1.5);
+    font-size: 1.2rem;
+}
+
+input {
+    cursor: pointer;
+}
+
+.change-topic {
+    text-align: center;
+}
+
+.change-topic-button {
+    font-size: 3rem;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    box-shadow: 2px 2px 10px black;
+    border: 1px dashed red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.change-topic-button:active {
+    box-shadow: 2px 2px 10px black inset;
+}
+
+.how-to-play-change-topic::before {
+    content: 'This is the background and ▼music toggle button▼';
+    text-align: center;
+    background: burlywood;
+    font-size: 30px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+}
+
+.border-red {
+    border: 1px solid red;
+}
+
+
+/* Media */
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .game-field {
+        height: 55%;
+    }
+
+    .calculated-field {
+        height: 45%;
+        max-width: 100vw;
+        position: relative;
+    }
+
+    .score-lives {
+        font-size: 10px;
+        display: block;
+        margin: 0;
+    }
+
+    .calculation {
+        min-height: 50%;
+        margin: auto;
+    }
+
+    .button {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .list-number-limit-one, .list-number-limit-two, .list-arithmetic-operations {
+        margin-bottom: 4%;
+        margin-top: 1%;
+    }
+
+    .change-topic {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .change-topic-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .how-to-play-score::after {
+        font-size: 20px;
+        top: 100%;
+    }
+
+    .how-to-play-change-topic::before {
+        display: none;
+    }
+}
