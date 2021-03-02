@@ -6,7 +6,6 @@ const wrapper = document.querySelector('.wrapper');
 const gameField = document.querySelector('.game-field');
 const background = document.querySelector('.background');
 const mathProblem = document.querySelector('.math-problem');
-
 const waterLevel = document.querySelector('.water-level');
 
 //start game
@@ -158,7 +157,7 @@ function  calcQuantitiesLives() {
 
 
 // check rain drops
-let soundFal = new Audio();
+const soundFal = new Audio();
 function checkRainDrops() {
     timerMistakes = setInterval(function() {       
         let timePassed = Date.now() - start;
@@ -169,8 +168,7 @@ function checkRainDrops() {
             arrayNewRainDrop = [];
             mistakes += 1;
             waterLevel.style.flexGrow = `${waterLevelPercent += 1}`;
-            const rainDrops = document.querySelectorAll('.rain-drop');
-            rainDrops.forEach(element => {
+            document.querySelectorAll('.rain-drop').forEach(element => {
                 element.classList.add('rain-drop-fal');
             });
             success = false;
@@ -348,11 +346,10 @@ function checkButtons(elem) {
 
 //check button enter
 function checkButtonEnter() {
-    if(+scoreboard.value === +arrayResult[0]) {
-        const rainDrops = document.querySelectorAll('.rain-drop');           
+    if(+scoreboard.value === +arrayResult[0]) {         
         if(arrayNewRainDrop[0].style.value === true) {
             dropletAcceleration();           
-            rainDrops.forEach(element => {
+            document.querySelectorAll('.rain-drop').forEach(element => {
                 element.classList.add('small-drop');
             }); 
             arrayResult = [];
@@ -360,12 +357,12 @@ function checkButtonEnter() {
             arrayTimeStartDrop = [];
             arrayNewRainDrop = [];
             clearInterval(timerMistakes);
-            let soundClear = new Audio();
+            const soundClear = new Audio();
             soundClear.preload = 'auto';
             soundClear.src = '../../sound/79ddae5b075d62053434.mp3';
             soundClear.play();
         } else {
-            let soundCorrect = new Audio();
+            const soundCorrect = new Audio();
             soundCorrect.preload = 'auto';
             soundCorrect.src = '../../sound/ffc89ff250028f8.mp3';
             soundCorrect.play();
@@ -373,7 +370,7 @@ function checkButtonEnter() {
             arrayTimeStartDrop.shift();
             arrayResult.shift();
             clearInterval(timerMistakes);
-            dropBurst(); 
+            reduceRaindrop(); 
         }         
         
         if(arrayTimeStartDrop.length > 0) {
@@ -392,9 +389,9 @@ function checkButtonEnter() {
         scoreboard.value = '0';
         success = true;
         calculateScore();
-        
+     
     } else {
-        let soundMistake = new Audio();
+        const soundMistake = new Audio();
         soundMistake.preload = 'auto';
         soundMistake.src = '../../sound/cab55714b513aa7.mp3';
         soundMistake.play();
@@ -404,15 +401,13 @@ function checkButtonEnter() {
 }
 
 
-//bursting a drop
-function dropBurst() {
-    const rainDrops = document.querySelectorAll('.rain-drop');
-    rainDrops.forEach(elem => {
+//reduces the resolved drop
+function reduceRaindrop() {
+    document.querySelectorAll('.rain-drop').forEach(elem => {
         if(+elem.getAttribute('value') === +arrayValueDrop[0]) {
             arrayValueDrop.shift();
             elem.classList.add('small-drop');
         }
-
     });     
 }
 
