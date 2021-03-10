@@ -412,7 +412,6 @@ button:active {
     left: 0;
 }
 
-
 .list-arithmetic-operations, .list-number-limit-one, .list-number-limit-two {
     display: flex;
     list-style-type: none;
@@ -422,12 +421,15 @@ button:active {
 }
 
 .arithmetic-operation, .limit-one, .limit-two {
+    box-shadow: 2px 2px 20px greenyellow;
     transform: scale(1.5);
     font-size: 1.2rem;
+    transition: .2s;
 }
 
-input {
-    cursor: pointer;
+.arithmetic-operation:active, .limit-one:active, .limit-two:active {
+    box-shadow: 2px 2px 20px blue;
+    transform: perspective(20px);
 }
 
 .change-topic {
