@@ -85,7 +85,7 @@ function startToGame() {
     scoreToScreen();
     changeTopic();
     startButton.addEventListener('click', () => {
-        startButtons.classList.add('hiden');
+        startButtons.classList.add('hidden');
         startRaining();
     });  
 }
@@ -440,41 +440,69 @@ function fullToScreen() {
 //button how to play
 function howToPlay() {
     buttonHowToPlay.addEventListener('click', () => {
-        startButtons.classList.add('hiden');
+        startButtons.classList.add('hidden');
         startRaining();
         soundFal.volume = 0.1;
 
         newRainDrop.classList.add('how-to-play-rain-drop');
-        setInterval(() => {
-           newRainDrop.classList.add('how-to-play-rain-drop'); 
-        }, 1000);
+
         setTimeout(() => {
             waterLevel.classList.add('how-to-play-water-level');
         }, 3000);
         
         setTimeout(() => {
-           scoreScreen.classList.add('how-to-play-score', 'border-red'); 
-        }, 5000);
+            waterLevel.classList.remove('how-to-play-water-level'); 
+            scoreScreen.classList.add('how-to-play-score', 'border-red'); 
+        }, 5500);
         
         setTimeout(() => {
-            calculation.classList.add('how-to-play-calculation', 'border-red');
-        }, 7000);
+            document.querySelectorAll('.rain-drop').forEach(element => {
+                element.classList.remove('how-to-play-rain-drop');
+            }); 
+            scoreScreen.classList.remove('how-to-play-score', 'border-red');
+            calculation.classList.add('how-to-play-calculation', 'border-red');  
+        }, 8000);
 
         setTimeout(() => {
+            calculation.classList.remove('how-to-play-calculation', 'border-red');
             settings.classList.add('how-to-play-settings');
-        }, 9000);
+        }, 10500);
 
         setTimeout(() => {
+            settings.classList.remove('how-to-play-settings');
             changeTopicButton.classList.add('how-to-play-change-topic');
-        }, 11000);
+            setInterval(() => {
+                pseudoSolutionInput();     
+            }, 2000); 
+        }, 13000);
         
         setTimeout(() => {
+            changeTopicButton.classList.remove('how-to-play-change-topic');
             background.classList.add('good-game');
-        }, 11500);
+        }, 20000);
 
         setTimeout(() => {
-            window.location.reload()
-        }, 14000);
+            window.location.reload();
+        }, 25000);
+    });
+}
+
+
+//pseudo solution input
+function pseudoSolutionInput() {
+    buttons.forEach(elem => {
+        if(+elem.innerText === arrayResult[0]) {
+            elem.classList.add('active-button');
+            elem.click();
+        }
+        setTimeout(() => {
+            elem.classList.remove('active-button')
+            if(elem.innerText === '↵') {
+                elem.classList.add('active-button');
+                elem.click();
+                setTimeout(() => elem.classList.remove('active-button'), 300);
+            }
+        }, 300);                
     });
 }
 
