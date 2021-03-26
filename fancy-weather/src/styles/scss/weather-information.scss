@@ -1,0 +1,101 @@
+.weather-information {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.location {    
+    font-size: 3.4em;
+    line-height: 54px;
+}
+
+.country, .city {
+    text-transform: uppercase;
+}
+
+.date {
+    font-size: 2.4em;
+    font-weight: 600;
+    line-height: 29px;
+}
+
+.date-text {
+    font-size: 1.3em;
+}
+
+.time-location {
+    margin-left: 10%;
+}
+
+.weather-for-today {
+    display: flex;
+}
+
+.temperature-now {
+    position: relative;
+}
+
+.temperature-now-number {
+    font-size: 30em;
+}
+
+.temperature-now-degrees {
+    position: absolute;
+    top: 5%;
+    right: -22%;
+    font-size: 10em;
+}
+
+.weather-summary {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+
+.icon-weather {
+    margin: -25% 0 0 -20%;
+}
+
+.icon-weather-img {
+    width: 25em;
+    height: 25em;
+}
+
+.weather-summary-list {
+    list-style-type: none;
+    font-size: 2.2em;
+    line-height: 37px;
+}
+
+
+.weather-three-days {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 78px;
+    text-transform: uppercase;
+}
+
+.name-day {
+    font-size: 2.2em;
+    line-height: 27px;
+}
+
+.temperature-day {
+    display: flex;
+}
+
+.temperature-day-degree {
+    font-size: 5em;
+}
+
+.temperature-today, .temperature-tomorrow, .temperature-day-after-tomorrow {
+    font-size: 8em;
+    font-weight: 600;
+    line-height: 98px;
+ }
+
+.icon-today, .icon-tomorrow, .icon-day-after-tomorrow {
+    width: 10em;
+    height: 10em;
+    margin-top: -15%;
+}

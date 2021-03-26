@@ -1,0 +1,165 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.settings {
+    display: flex;
+}
+
+button {
+    height: 4.8em;
+    width: 4.8em;
+    cursor: pointer;
+}
+
+.background-change, .celsius-fahrenheit, .change-topic, .search-button {
+    @include style-button;
+}
+
+.background-change:hover, .celsius-fahrenheit:hover, .change-topic:hover, .search-button:hover {
+    @include style-button-hover;
+}
+
+.background-change:focus, .celsius-fahrenheit:focus,  .change-topic:focus, .search-button:focus {
+    outline: none;
+}
+
+.background-change {
+    width: 5em;
+    height: 4.8em;
+}
+
+.background-change-svg {
+    transition: .5s;
+}
+
+.languages {
+    margin: 0 3%;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px grey inset, 0 0 0 0 gray;
+    letter-spacing: 2px;
+    transition: .20s ease-in-out;
+    color: white;
+    font-size: 1.8em;
+    padding: 3px; 
+    outline: 0;
+    width: 5em; 
+    height: 2.7em; 
+    option {
+        color: gray;
+        background-color: rgba(39, 29, 29, 0.2);
+    }    
+}
+
+.languages:hover {
+    @include style-button-hover;
+}
+
+.units {
+    position: relative;
+    margin-right: 3%;
+}
+
+.celsius-fahrenheit-label {
+    cursor: pointer;
+    font-size: 3em;
+    position: absolute;
+    top: 11%;
+    left: 20%;
+    color: gray;
+}
+
+.celsius-fahrenheit {
+    cursor: pointer;
+    position: relative;
+    width: 8em;
+    height: 4.8em;
+    appearance: none;
+    outline: none;
+}
+
+.celsius-fahrenheit::before {
+    content: '';
+    position: absolute;
+    width: 4.4em;
+    height: 4.8em;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: .5s;
+    box-shadow: 2px 2px .8em gray inset;
+}
+
+.celsius-fahrenheit:checked::before {
+    left: 4em;
+}
+
+.change-topic {
+    background: url(../../img/icons/icons8-day-and-night-24.png)0 /100% no-repeat;
+    width: 5.2em;
+    height: 4.8em;
+}
+
+.change-topic:hover {
+    color:rgba(0, 0, 0, 0);
+}
+
+
+.search {  
+    position: relative;
+    display: flex;
+}
+
+.search-input-field {
+    cursor: text;
+    height: 2.1em;
+    width: 15em;
+    border-radius: 10px;
+    border: 1px solid gray;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background:  rgba(100, 97, 97, 0.5);
+    color: $maincolor;
+    font-size: 2em;
+    padding: 0 0 -.5% 0; 
+}
+
+.search-input-field:focus {
+    outline: none;
+}
+
+.search-button-audio {
+    position: absolute;
+    top: 0;
+    right: 10em;
+    background: none;
+    border: none;
+    img {
+        width: 100%;
+    }
+    :active {
+        transform: translateY(2px);
+    }
+}
+
+.search-button-audio:focus {
+    outline: none;
+}
+   
+.search-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 10em;
+    height: 4.7em;
+    margin: 0 0 0 -1%;
+}
+
+.search-button-animation {
+    background: url(..//../img/icons/search.gif)center/100% 100% no-repeat;
+    box-shadow: 0 0 10px 0 gray inset, 0 0 10px 4px gray;
+    color: rgba(0, 0, 0, 0); 
+}

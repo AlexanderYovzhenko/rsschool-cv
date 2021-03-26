@@ -1,0 +1,24 @@
+.place-information {
+    align-self: flex-end;
+}
+
+.place-map {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 75%, 100% 100%, 90% 95%, 0 95%);
+    width: 33em;
+    height: 35em;
+    border-radius: 10%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 0;
+    background-color: gray; 
+    position: relative;   
+}
+
+.coordinates-of-place {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.latitude, .longitude  {
+    text-align: right;
+}

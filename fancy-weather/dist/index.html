@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="shortcut icon" href="../src/img/favicon/weather.ico" type="image/x-icon">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <title>Fancy Weather</title>
+<script defer src="bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+<body>   
+    <img class="background-image" src="../src/img/5d16ef05c97304fddd24be298a49d803.png" alt="background">
+    
+    <div class="wrapper">
+        <header class="header">
+            <div class="settings">
+                <button class="background-change">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                    <svg class="background-change-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    	 viewBox="0 0 579.347 579.347" style="enable-background:new 0 0 579.347 579.347;"
+                    	 xml:space="preserve">
+                    <g>
+                    	<g>
+                    		<path d="M565.2,217.259h-39.841c0-3.06-0.41-6.169-1.316-9.253c-30.3-103.049-126.556-175.02-234.065-175.02
+                    			c-107.485,0-203.735,71.953-234.053,174.977c-5.11,17.375,4.829,35.606,22.204,40.716c17.356,5.104,35.6-4.829,40.716-22.203
+                    			c22.16-75.307,92.534-127.908,171.133-127.908c75.337,0,142.976,48.366,168,118.685h-38.005c-15.092,0-18.679,8.654-8.005,19.321
+                    			l61.292,61.304c10.673,10.674,27.975,10.674,38.647,0l61.298-61.297C583.872,225.912,580.292,217.259,565.2,217.259z"/>
+                    		<path d="M501.216,330.675c-17.369-5.092-35.606,4.822-40.711,22.203c-22.16,75.307-92.54,127.901-171.133,127.901
+                    			c-75.337,0-142.975-48.372-168-118.685h38.005c15.092,0,18.672-8.653,8.005-19.321l-61.298-61.298
+                    			c-10.673-10.673-27.975-10.673-38.648,0L6.144,342.773c-10.673,10.674-7.087,19.321,8.005,19.321h39.835
+                    			c0,3.06,0.41,6.163,1.322,9.247c30.3,103.049,126.549,175.02,234.065,175.02c107.492,0,203.741-71.952,234.053-174.977
+                    			C528.535,354.017,518.597,335.785,501.216,330.675z"/>
+                    	</g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg>
+
+                    <!-- <img class="background-change-img" src="../src/img/icons/circular-arrows-couple.svg" alt="update image"> -->
+                </button>
+                <select name="" id="" class="languages">
+                    <option value="en"  class="english">en</option>
+                    <option value="ru"  class="russian">ru</option>
+                    <option value="be"  class="belarusian">be</option>
+                </select>
+                <div class="units">
+                    <input type="checkbox" id="cf" class="celsius-fahrenheit">
+                    <label for="cf" class="celsius-fahrenheit-label"><span>C F</span></label>
+                </div>
+                <button class="change-topic">&#8652;</button>
+            </div>
+            <div class="search">              
+                <input placeholder="Search city" type="text" class="search-input-field">
+                <button class="search-button-audio"><img src="../src/img/icons/microphone-icon_34391.png" alt=""></button>
+                <button class="search-button">SEARCH</button>
+            </div>
+        </header>
+
+        <div class="warning-window">
+            <p class="warning-window-text">Please enter a valid request.</p>
+            <button class="warning-window-button"><img src="../src/img/icons/delete_102866.png" alt="closes window"></button>
+        </div>
+
+        <div class="weather-information-and-place-information">
+
+            <div class="weather-information">
+
+                <div class="location-date">
+                    <div class="location">
+                        <p><h1><span class="city">Minsk,</span><span class="country">Belarus</span></h1></p>
+                    </div>
+                    <div class="date">
+                        <p class="date-text"><span class="date-location">Mon 28 October</span><span class="time-location">17:23</span></p>
+                    </div>
+                </div>
+                
+                <div class="weather-for-today">
+                    <div class="temperature-now"><span class="temperature-now-number"></span><span class="temperature-now-degrees">°</span></div>
+                
+                    <div class="weather-summary">
+                        <div class="icon-weather">
+                            <img class="icon-weather-img" src="" alt="icon weather">
+                            </img>
+                        </div>
+                        <ul class="weather-summary-list">
+                            <li class="weather-description">OVERCAST</li>
+                            <li class="apparent-temperature">FEELS LIKE: <span class="apparent-temperature-index">7 </span><span>°</span></li>
+                            <li class="wind-speed">WIND: <span class="wind-speed-index">2</span>m/s</li>
+                            <li class="humidity">HUMIDITI: <span class="humidity-index">83</span>%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="weather-three-days">
+                    <div class="today">
+                        <div class="name-day name-today">TUESDAY</div>
+                        <div class="temperature-day">
+                            <span class="temperature-today">7</span>
+                            <span class="temperature-day-degree">°</span>
+                            <img class="icon-today" src="" alt="icon weather today"> 
+                            </img>
+                        </div>
+                    </div>
+                    <div class="tomorrow">
+                        <div class="name-day name-tomorrow">TOMORROW</div>
+                        <div class="temperature-day">
+                            <span class="temperature-tomorrow">6</span>
+                            <span class="temperature-day-degree">°</span>
+                            <img class="icon-tomorrow" src="" alt="icon weather tomorrow">
+                            </img>
+                        </div>
+                    </div>
+                    <div class="day-after-tomorrow">
+                        <div class="name-day name-day-after-tomorrow">DAY AFTER TOMORROW</div>
+                        <div class="temperature-day">
+                            <span class="temperature-day-after-tomorrow">3</span>
+                            <span class="temperature-day-degree">°</span>
+                            <img class="icon-day-after-tomorrow" src="" alt="icon weather day after tomorrow">                              
+                            </img>
+                        </div>
+                    </div>
+                </div>
+         
+            </div>
+            
+            <div class="place-information">
+                <div class="place-map" id='map'></div>
+                <br>
+                <br>
+                <br>
+                <div class="coordinates-of-place">
+                    <div class="latitude">Latitude:53°54`</div>
+                    <div class="longitude">Longitude:27°34`</div>
+                </div>
+            </div>
+        </div>   
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+@import "~normalize.css";
+@import "fonts.scss";
+@import "color.scss";
+@import "mixin";
+@import "header.scss";
+@import "weather-information.scss";
+@import "place-information.scss";
+@import "warning-window.scss";
+
+
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    background-color: gray;
+}
+
+
+.background-image {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.7;
+    transition: .4s;
+    position: fixed;
+    z-index: -10;
+}
+
+.wrapper {
+    font-family: "Montserrat", sans-serif;
+    color: $maincolor;
+    font-weight: 700;
+    padding: 3% 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    transition: color 1.5s;
+}
+
+.black-theme {
+    color: black;
+    transition: color 1.5s;
+}
+
+.weather-information-and-place-information { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+@media (max-width: 1150px) {
+    body {
+        font-size: 7px;
+    }
+
+    .temperature-day-degree {
+        margin-top: 10%;
+    }
+
+    .icon-today, .icon-tomorrow, .icon-day-after-tomorrow {
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 950px) {
+    body {
+        font-size: 7px;
+    }
+
+    .header {
+        flex-direction: column-reverse;
+        align-self: center;
+        .settings {
+            align-self: center;
+            margin-top: 10%;
+        }
+        .search-input-field {
+            height: 1.9em;
+        }
+    }
+
+    .weather-information-and-place-information {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .temperature-day-degree {
+        margin-top: 20%;
+    }
+
+    .place-information {
+        align-self: center;
+    }
+
+    .place-map {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 340px) {
+    body {
+        font-size: 4px;
+    }
+
+    .temperature-day-degree {
+        margin-top: 30%;
+    }
+
+    .temperature-today, .temperature-tomorrow, .temperature-day-after-tomorrow {
+        margin-top: -20%;
+    }
+
+    .place-map {
+        width: 15em;
+        height: 17em;
+    }
+
+    .search-button {
+        height: 5.2em;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        font-size: 3px;
+    }
+}

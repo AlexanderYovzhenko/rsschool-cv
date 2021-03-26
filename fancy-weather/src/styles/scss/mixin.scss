@@ -1,0 +1,15 @@
+@mixin style-button {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px grey inset, 0 0 0 0 gray;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    transition: .15s ease-in-out;
+}
+
+@mixin style-button-hover {
+    box-shadow: 0 0 10px 0 gray inset, 0 0 10px 4px gray;
+    color: gray;
+}

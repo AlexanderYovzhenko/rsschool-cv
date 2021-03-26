@@ -1,0 +1,678 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+@font-face {
+  font-family: 'Montserrat'; }
+
+.header {
+  display: flex;
+  justify-content: space-between; }
+
+.settings {
+  display: flex; }
+
+button {
+  height: 4.8em;
+  width: 4.8em;
+  cursor: pointer; }
+
+.background-change, .celsius-fahrenheit, .change-topic, .search-button {
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px grey inset, 0 0 0 0 gray;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  transition: .15s ease-in-out; }
+
+.background-change:hover, .celsius-fahrenheit:hover, .change-topic:hover, .search-button:hover {
+  box-shadow: 0 0 10px 0 gray inset, 0 0 10px 4px gray;
+  color: gray; }
+
+.background-change:focus, .celsius-fahrenheit:focus, .change-topic:focus, .search-button:focus {
+  outline: none; }
+
+.background-change {
+  width: 5em;
+  height: 4.8em; }
+
+.background-change-svg {
+  transition: .5s; }
+
+.languages {
+  margin: 0 3%;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px grey inset, 0 0 0 0 gray;
+  letter-spacing: 2px;
+  transition: .20s ease-in-out;
+  color: white;
+  font-size: 1.8em;
+  padding: 3px;
+  outline: 0;
+  width: 5em;
+  height: 2.7em; }
+  .languages option {
+    color: gray;
+    background-color: rgba(39, 29, 29, 0.2); }
+
+.languages:hover {
+  box-shadow: 0 0 10px 0 gray inset, 0 0 10px 4px gray;
+  color: gray; }
+
+.units {
+  position: relative;
+  margin-right: 3%; }
+
+.celsius-fahrenheit-label {
+  cursor: pointer;
+  font-size: 3em;
+  position: absolute;
+  top: 11%;
+  left: 20%;
+  color: gray; }
+
+.celsius-fahrenheit {
+  cursor: pointer;
+  position: relative;
+  width: 8em;
+  height: 4.8em;
+  appearance: none;
+  outline: none; }
+
+.celsius-fahrenheit::before {
+  content: '';
+  position: absolute;
+  width: 4.4em;
+  height: 4.8em;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transition: .5s;
+  box-shadow: 2px 2px .8em gray inset; }
+
+.celsius-fahrenheit:checked::before {
+  left: 4em; }
+
+.change-topic {
+  background: url(660b2c07cdedca0fe0445a7888e2f7d3.png) 0/100% no-repeat;
+  width: 5.2em;
+  height: 4.8em; }
+
+.change-topic:hover {
+  color: rgba(0, 0, 0, 0); }
+
+.search {
+  position: relative;
+  display: flex; }
+
+.search-input-field {
+  cursor: text;
+  height: 2.1em;
+  width: 15em;
+  border-radius: 10px;
+  border: 1px solid gray;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: rgba(100, 97, 97, 0.5);
+  color: white;
+  font-size: 2em;
+  padding: 0 0 -.5% 0; }
+
+.search-input-field:focus {
+  outline: none; }
+
+.search-button-audio {
+  position: absolute;
+  top: 0;
+  right: 10em;
+  background: none;
+  border: none; }
+  .search-button-audio img {
+    width: 100%; }
+  .search-button-audio :active {
+    transform: translateY(2px); }
+
+.search-button-audio:focus {
+  outline: none; }
+
+.search-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 10em;
+  height: 4.7em;
+  margin: 0 0 0 -1%; }
+
+.search-button-animation {
+  background: url(1bcdd7a4be3ec79f34f2141f36c4dee0.gif) center/100% 100% no-repeat;
+  box-shadow: 0 0 10px 0 gray inset, 0 0 10px 4px gray;
+  color: rgba(0, 0, 0, 0); }
+
+.weather-information {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+
+.location {
+  font-size: 3.4em;
+  line-height: 54px; }
+
+.country, .city {
+  text-transform: uppercase; }
+
+.date {
+  font-size: 2.4em;
+  font-weight: 600;
+  line-height: 29px; }
+
+.date-text {
+  font-size: 1.3em; }
+
+.time-location {
+  margin-left: 10%; }
+
+.weather-for-today {
+  display: flex; }
+
+.temperature-now {
+  position: relative; }
+
+.temperature-now-number {
+  font-size: 30em; }
+
+.temperature-now-degrees {
+  position: absolute;
+  top: 5%;
+  right: -22%;
+  font-size: 10em; }
+
+.weather-summary {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%; }
+
+.icon-weather {
+  margin: -25% 0 0 -20%; }
+
+.icon-weather-img {
+  width: 25em;
+  height: 25em; }
+
+.weather-summary-list {
+  list-style-type: none;
+  font-size: 2.2em;
+  line-height: 37px; }
+
+.weather-three-days {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 78px;
+  text-transform: uppercase; }
+
+.name-day {
+  font-size: 2.2em;
+  line-height: 27px; }
+
+.temperature-day {
+  display: flex; }
+
+.temperature-day-degree {
+  font-size: 5em; }
+
+.temperature-today, .temperature-tomorrow, .temperature-day-after-tomorrow {
+  font-size: 8em;
+  font-weight: 600;
+  line-height: 98px; }
+
+.icon-today, .icon-tomorrow, .icon-day-after-tomorrow {
+  width: 10em;
+  height: 10em;
+  margin-top: -15%; }
+
+.place-information {
+  align-self: flex-end; }
+
+.place-map {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 75%, 100% 100%, 90% 95%, 0 95%);
+  width: 33em;
+  height: 35em;
+  border-radius: 10%;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 0;
+  background-color: gray;
+  position: relative; }
+
+.coordinates-of-place {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 30px; }
+
+.latitude, .longitude {
+  text-align: right; }
+
+.warning-window {
+  display: none;
+  position: fixed;
+  top: 35%;
+  left: 30%;
+  width: 40%;
+  height: 25%;
+  border: 3px solid red;
+  border-radius: 5%;
+  background-color: wheat;
+  z-index: 10; }
+
+.warning-window-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: none; }
+
+.warning-window-button:focus {
+  outline: none; }
+
+.warning-window-button:active {
+  transform: translateY(2px); }
+
+.warning-window-button img {
+  width: 100%;
+  height: 100%; }
+
+.warning-window-text {
+  font-size: 4em;
+  color: #474646;
+  text-align: center; }
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  background-color: gray; }
+
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.7;
+  transition: .4s;
+  position: fixed;
+  z-index: -10; }
+
+.wrapper {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: 700;
+  padding: 3% 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  transition: color 1.5s; }
+
+.black-theme {
+  color: black;
+  transition: color 1.5s; }
+
+.weather-information-and-place-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+@media (max-width: 1150px) {
+  body {
+    font-size: 7px; }
+  .temperature-day-degree {
+    margin-top: 10%; }
+  .icon-today, .icon-tomorrow, .icon-day-after-tomorrow {
+    margin-top: 0; } }
+
+@media (max-width: 950px) {
+  body {
+    font-size: 7px; }
+  .header {
+    flex-direction: column-reverse;
+    align-self: center; }
+    .header .settings {
+      align-self: center;
+      margin-top: 10%; }
+    .header .search-input-field {
+      height: 1.9em; }
+  .weather-information-and-place-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+  .temperature-day-degree {
+    margin-top: 20%; }
+  .place-information {
+    align-self: center; }
+  .place-map {
+    width: 70vw; } }
+
+@media (max-width: 550px) {
+  body {
+    font-size: 5px; } }
+
+@media (max-width: 340px) {
+  body {
+    font-size: 4px; }
+  .temperature-day-degree {
+    margin-top: 30%; }
+  .temperature-today, .temperature-tomorrow, .temperature-day-after-tomorrow {
+    margin-top: -20%; }
+  .place-map {
+    width: 15em;
+    height: 17em; }
+  .search-button {
+    height: 5.2em; } }
+
+@media (max-width: 300px) {
+  body {
+    font-size: 3px; } }
+

@@ -1,0 +1,41 @@
+.warning-window {
+    display: none;
+    position: fixed;
+    top: 35%;
+    left: 30%;
+    width: 40%;
+    height: 25%;
+    border: 3px solid red;
+    border-radius: 5%;
+    background-color: wheat;
+    z-index: 10;   
+}
+
+.warning-window-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+}
+
+.warning-window-button:focus {
+    outline: none;
+}
+
+.warning-window-button:active {
+    transform: translateY(2px);
+}
+
+.warning-window-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.warning-window-text {
+    font-size: 4em;
+    color: rgb(71, 70, 70);
+    text-align: center;
+}
