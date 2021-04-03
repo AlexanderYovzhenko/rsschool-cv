@@ -38,7 +38,6 @@ io.on('connection', (socket) => {
         } else {
             io.sockets.to(roomUsers).emit('add_mess', {arrayMessages, message : data.message, username : socket.username, className : data.className});
         }
-    console.log(socket.adapter.rooms)
     });
 
     socket.on('typing', (data) => {
