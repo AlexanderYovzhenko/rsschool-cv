@@ -5,11 +5,9 @@ import '../js/search';
 import '../js/weather-information';
 import '../js/warning-window';
 
-
 const scriptSettings = require('./settings');
 const scriptLocation = require('./location-information');
-
-
+const scriptWeatherInformation = require('./weather-information');
 
 window.onload = function startSettings() {
     localStorage.refreshingMap = true;  
@@ -18,38 +16,26 @@ window.onload = function startSettings() {
     }
 };
 
-
 //get user location
 async function getGeolocation() {
     const url = 'https://ipinfo.io?token=16681db3879947';
     try {
-        const response = await fetch(url);
-        if(!response.ok) {
-            console.log('Failed to load geolocation data');
-        }
-        const data = await response.json();
+        const data = await scriptWeatherInformation.serverRequest(url, 'Failed to load geolocation data');
         addCity(data);
     } catch (error) {
         console.log(error);
     }
 }
 
-
 // add city in local storage
 function addCity(data) {
-    let correctCity = [];
     localStorage.city = data.city || 'Минск';
-    if(localStorage.city.split('').includes("'")) {
-        localStorage.city.split('').forEach(element => {
-            if(element !== "'") {
-                correctCity.push(element);
-            } 
-        });
-        localStorage.city = correctCity.join('');
+    if(localStorage.city.includes("'")) {
+        localStorage.city = localStorage.city.split('').filter(letter => letter !== "'").join('');
+        scriptLocation.getGeocoding();
+    } else {
         scriptLocation.getGeocoding();
     }
-    scriptLocation.getGeocoding();
 }
-
 
 getGeolocation();

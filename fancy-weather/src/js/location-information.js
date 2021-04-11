@@ -5,11 +5,12 @@ const city = document.querySelector('.city');
 const country = document.querySelector('.country');
 
 const warningWindow = document.querySelector('.warning-window');
-
-
 const scriptWeatherInformation = require('./weather-information');
 
-
+const coordinateLanguages = {
+    latitude: ['Шырата', 'Широта', 'Latitude'],
+    longitude: ['Даўгата', 'Долгота', 'Longitude']
+};
 
 //coordinates on the map
 function coordinatesMap() {
@@ -22,16 +23,12 @@ function coordinatesMap() {
     });
 }
 
-
 //get city and country
 async function getGeocoding() {
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${localStorage.city}&key=3383e762dc7440eca1181ddf9bea1f4a&pretty=1&no_annotations=1&language=${localStorage.language || 'en'}`;
     try {
-        const response = await fetch(url);
-        if(!response.ok) {
-            console.log('Failed to load geocoding data');
-        }
-        const data = await response.json();
+        const data = await scriptWeatherInformation.serverRequest(url, 'Failed to load geocoding data');
+        localStorage.country = data.results[0].components.country_code;
         displayCityCountryCorrectLanguage(data);
         scriptWeatherInformation.getLinkToWeather(displayCoordinatesLocations, coordinatesMap);
     } catch (error) {
@@ -40,25 +37,17 @@ async function getGeocoding() {
     }
 }
 
-
 //display city and country in correct language
 function displayCityCountryCorrectLanguage(data) {
     city.innerHTML = `${data.results[0].components.city || data.results[0].components.town || data.results[0].components.village}, `;
     country.innerHTML = data.results[0].components.country; 
 }
 
-
 //display coordinates locations
 function displayCoordinatesLocations (data) {  
-    latitude.innerHTML = localStorage.language === 'be' ? `Шырата: ${coordinatesLocations(data.lat.split('')).join('')}` :
-                         localStorage.language === 'ru' ? `Широта: ${coordinatesLocations(data.lat.split('')).join('')}` :
-                                                          `Latitude: ${coordinatesLocations(data.lat.split('')).join('')}`;
-    
-    longitude.innerHTML = localStorage.language === 'be' ? `Даўгата: ${coordinatesLocations(data.lon.split('')).join('')}` :
-                          localStorage.language === 'ru' ? `Долгота: ${coordinatesLocations(data.lon.split('')).join('')}` :
-                                                           `Longitude: ${coordinatesLocations(data.lon.split('')).join('')}`;
+    latitude.innerHTML = `${coordinateLanguages.latitude[localStorage.keys || 2]}: ${coordinatesLocations(data.lat.split('')).join('')}`;               
+    longitude.innerHTML = `${coordinateLanguages.longitude[localStorage.keys || 2]}: ${coordinatesLocations(data.lon.split('')).join('')}`;                   
 }
-
 
 //location of coordinates in correct format
 function coordinatesLocations(dataCoordinates) {
@@ -80,13 +69,14 @@ function coordinatesLocations(dataCoordinates) {
         }
         if(i === dataCoordinates.length && coordinatesArray.includes("' ")) {
             coordinatesArray.push('"');
-        } else if(i === dataCoordinates.length && !coordinatesArray.includes("' ")) {coordinatesArray.push("'");}
+        } else if(i === dataCoordinates.length && !coordinatesArray.includes("' ")) { 
+            coordinatesArray.push("'");
+        }
         coordinatesArray.push(dataCoordinates[i]);
         minutesIndex++;
     }
     return coordinatesArray;
 }
-
 
 module.exports = {
     coordinatesMap: coordinatesMap,

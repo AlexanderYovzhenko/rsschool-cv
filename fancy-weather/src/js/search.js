@@ -5,8 +5,6 @@ const searchButton = document.querySelector('.search-button');
 const scriptLocation = require('./location-information');
 const scriptSettings = require('./settings');
 
-
-
 //city ​​search by clicking on the search button
 function searchCity() {
     searchButton.addEventListener('click', () => {
@@ -19,7 +17,6 @@ function searchCity() {
         }
     });
 }
-
 
 //city ​​search by clicking on the audio search button
 function searchAudioCity() {
@@ -34,7 +31,6 @@ function searchAudioCity() {
     });
 }
 
-
 //request to find a city and change the background
 function requestChangeCity() {
     localStorage.refreshingMap = true; 
@@ -44,7 +40,6 @@ function requestChangeCity() {
     scriptSettings.backgroundChangeRequest();
 }
 
-
 //search button animation
 function searchButtonAnimation() {
     searchButton.classList.add('search-button-animation');
@@ -52,7 +47,6 @@ function searchButtonAnimation() {
         searchButton.classList.remove('search-button-animation');
     }, 2000);
 }
-
 
 searchCity();
 searchAudioCity();

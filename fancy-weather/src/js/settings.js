@@ -9,11 +9,13 @@ const background = document.querySelector('.background-image');
 const searchInputField = document.querySelector('.search-input-field');
 const searchButton = document.querySelector('.search-button');
 
-
 const scriptWeatherInformation = require('./weather-information');
 const scriptLocation = require('./location-information');
 
-
+const searchLanguages = {
+    searchButton: ['ПОШУК', 'ПОИСК', 'SEARCH'],
+    searchInputField: ['Пошук горада', 'Искать город', 'Search city']
+};
 
 //change the background when the button is clicked
 function changeBackground() {
@@ -23,29 +25,22 @@ function changeBackground() {
     });    
 }
 
-
 //animates the icon on the background change button
 function animatesIconButtonChangeBackground() {
     buttonChangeBackgroundSvg.style.transform = 'rotate(360deg)';
     setTimeout(() => buttonChangeBackgroundSvg.style.transform = 'rotate(0deg)', 500);    
 }
 
-
 //background change request
 async function backgroundChangeRequest() {
     const url = 'https://api.unsplash.com/photos/random?query=morning&client_id=oXHFq9zyQRKcxh8r5Q4rRCtMvcYIrT8bFy1AGkbBoMY';
     try {
-        const response = await fetch(url);
-        if(!response.ok) {
-            console.log('Failed to load image data');
-        }
-        const data = await response.json(); 
+        const data = await scriptWeatherInformation.serverRequest(url, 'Failed to load image data');
         smoothBackgroundChange(data); 
     } catch (error) {
         console.log(error);
     }
 }    
-
 
 //smooth background change
 function smoothBackgroundChange(data) {
@@ -56,17 +51,28 @@ function smoothBackgroundChange(data) {
         }, 300);
 }
 
-
 //change page language
 function changeLanguage() {
     buttonSelectLanguage.value = localStorage.language || 'en';
     buttonSelectLanguage.addEventListener('click', () => {
         localStorage.language = buttonSelectLanguage.value;
+        changeLanguageKey(); 
         scriptLocation.getGeocoding();
         changeLanguageSearchButton();      
     });
 }
 
+function changeLanguageKey() {
+    switch (localStorage.language) {
+        case 'be': localStorage.keys = 0;
+        break;
+        case 'ru': localStorage.keys = 1;
+        break;
+        case 'en': localStorage.keys = 2;
+        break;
+        default: localStorage.keys = 2;
+        }
+}
 
 //toggle temperature degrees
 function switchDegrees() {
@@ -76,7 +82,6 @@ function switchDegrees() {
         scriptWeatherInformation.updateWeatherInformationThreeDay();    
     });
 }
-
 
 //change site theme
 function changeSiteTheme() {
@@ -92,24 +97,16 @@ function changeSiteTheme() {
     });
 }
 
-
 //change the language of the search button
 function changeLanguageSearchButton() {
-    searchButton.innerText = localStorage.language === 'be' ? `ПОШУК` :
-                             localStorage.language === 'ru' ? `ПОИСК` :
-                                                              `SEARCH`;
-
-    localStorage.language === 'be' ? searchInputField.setAttribute('placeholder', 'Пошук горада') :                                                         
-    localStorage.language === 'ru' ? searchInputField.setAttribute('placeholder', 'Искать город') :                                                         
-                                     searchInputField.setAttribute('placeholder', 'Search city');                                                        
+    searchButton.innerText = searchLanguages.searchButton[localStorage.keys];             
+    searchInputField.setAttribute('placeholder', searchLanguages.searchInputField[localStorage.keys]);                                                                         
 }
-
 
 module.exports = {
     backgroundChangeRequest: backgroundChangeRequest,
     buttonSelectUnits: buttonSelectUnits
 };
-
 
 changeLanguageSearchButton();
 changeBackground();
