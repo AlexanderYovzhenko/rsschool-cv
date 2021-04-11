@@ -1,0 +1,44 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "airbnb-base/legacy",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "rules": {
+        "linebreak-style": 0,
+        "indent": 0,
+        "no-multiple-empty-lines": 0,
+        "no-use-before-define": 0,
+        "spaced-comment": 0,
+        "no-nested-ternary": 0,
+        "no-trailing-spaces": 0,
+        "keyword-spacing": 0,
+        "operator-linebreak": 0,
+        "space-infix-ops": 0,
+        "no-plusplus": 0,
+        "space-before-function-paren": 0,
+        "no-undef": 0,
+        "no-unused-vars": 0,
+        "no-mixed-operators": 0,
+        "object-curly-spacing": 0,
+        "block-spacing": 0,
+        "quotes": 0,
+        "one-var": 0,
+        "no-else-return": 0,
+        "max-len": 0,
+        "no-param-reassign": 0,
+        "no-return-assign": 0,
+        "no-irregular-whitespace": 0,
+        "no-unused-expressions": 0,
+        "no-continue": 0,
+        "func-names": 0,
+        "no-console": 0, 
+        "space-before-blocks": 0,
+        "no-return-await": 0 
+    }
+}
