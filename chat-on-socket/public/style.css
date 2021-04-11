@@ -52,6 +52,7 @@
       position: absolute;
       top: 5%;
       right: 8%;
+      cursor: pointer;
   }
 
   button#connection:focus {

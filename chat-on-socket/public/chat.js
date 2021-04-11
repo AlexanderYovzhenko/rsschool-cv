@@ -15,7 +15,6 @@ $(function() {
   const historyChat = document.querySelector(".history-chat-text");
   const buttonCloseHistoryChat = document.querySelector(".button-close-history-chat");
 
-  
   let arrayMessages = [];
 
   function changeUserConnectionStatus() {
@@ -43,13 +42,23 @@ $(function() {
   }
 
   send_message.click(() => {
+    toMessage(); 
+  });
+
+  message.keydown((e) => {
+    if(e.keyCode === 13) {
+      toMessage();
+    }
+  });
+
+  function toMessage() {
     socket.emit('create', userRoom.val());
     socket.emit("change_username", { username: username.val() || "Anonymous" });
     socket.emit("new_message", {
-      message: message.val(),
-      className: alertClass
+    message: message.val(),
+    className: alertClass
     });
-  });
+  }
 
   buttonHistoryChat.addEventListener('click', () => {
     historyChatWindow.style.display = 'block';
