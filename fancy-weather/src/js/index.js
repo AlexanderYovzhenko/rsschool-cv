@@ -11,6 +11,7 @@ const scriptWeatherInformation = require('./weather-information');
 
 window.onload = function startSettings() {
     localStorage.refreshingMap = true;  
+    scriptSettings.changeLanguageKey();
     if(localStorage.degrees === 'true') {
         scriptSettings.buttonSelectUnits.checked = 'true';   
     }

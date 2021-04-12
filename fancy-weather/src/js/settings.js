@@ -99,13 +99,14 @@ function changeSiteTheme() {
 
 //change the language of the search button
 function changeLanguageSearchButton() {
-    searchButton.innerText = searchLanguages.searchButton[localStorage.keys];             
-    searchInputField.setAttribute('placeholder', searchLanguages.searchInputField[localStorage.keys]);                                                                         
+    searchButton.innerText = searchLanguages.searchButton[localStorage.keys || 2];             
+    searchInputField.setAttribute('placeholder', searchLanguages.searchInputField[localStorage.keys || 2]);                                                                         
 }
 
 module.exports = {
     backgroundChangeRequest: backgroundChangeRequest,
-    buttonSelectUnits: buttonSelectUnits
+    buttonSelectUnits: buttonSelectUnits,
+    changeLanguageKey: changeLanguageKey
 };
 
 changeLanguageSearchButton();
