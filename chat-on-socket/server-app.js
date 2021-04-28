@@ -27,9 +27,8 @@ let roomUsers;
 io.on('connection', (socket) => {
 	console.log('New user connected')
 
-    socket.on('create', function(room) {
-      room == '' ? roomUsers = '1000': roomUsers = room;
-      socket.join(roomUsers);
+    socket.on('create', (room) => {
+      roomUsers = room;
     });
 
 	socket.username = "Anonymous";
@@ -40,14 +39,10 @@ io.on('connection', (socket) => {
 
     socket.on('new_message', (data) => {
         arrayMessages.push(`${socket.username}: ${data.message} `);
-        if(roomUsers === '1000') {
-            io.sockets.emit('add_mess', {arrayMessages, message : data.message, username : socket.username, className : data.className});
-        } else {
-            io.sockets.to(roomUsers).emit('add_mess', {arrayMessages, message : data.message, username : socket.username, className : data.className});
-        }
+        io.sockets.emit('add_mess', {roomUsers, arrayMessages, message : data.message, username : socket.username, className : data.className});
     });
 
     socket.on('typing', (data) => {
-    	socket.broadcast.emit('typing', {username : socket.username})
+    	socket.broadcast.emit('typing', {roomUsers, username : socket.username})
     });
 });

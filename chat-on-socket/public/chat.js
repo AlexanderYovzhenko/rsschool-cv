@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   
   const socket = io.connect("http://localhost:3000");
   
@@ -54,10 +54,12 @@ $(function() {
   function toMessage() {
     socket.emit('create', userRoom.val());
     socket.emit("change_username", { username: username.val() || "Anonymous" });
-    socket.emit("new_message", {
-    message: message.val(),
-    className: alertClass
-    });
+    if(message.val()) {
+      socket.emit("new_message", {
+        message: message.val(),
+        className: alertClass
+      });
+    }
   }
 
   buttonHistoryChat.addEventListener('click', () => {
@@ -96,29 +98,38 @@ $(function() {
   }
 
   socket.on("add_mess", data => {
-    arrayMessages = data.arrayMessages;
-    feedback.html("");
-    message.val("");
-    chatroom.append(
-      "<div class='alert alert-" +
-        data.className +
-        "'<b>" +
-        data.username +
-        "</b>: " +
-        data.message +
-        "</div>"
-    );
+    if(userRoom.val() === data.roomUsers) {
+      arrayMessages = data.arrayMessages;   
+      feedback.html("");
+      message.val("");
+      chatroom.append(
+        "<div class='alert alert-" +
+          data.className +
+          "'<b>" +
+          data.username +
+          "</b>: " +
+          data.message +
+          "</div>"
+      );
+    }   
   });
 
   message.bind("keypress", () => {
+    socket.emit('create', userRoom.val());
     socket.emit("typing");
   });
 
   socket.on("typing", data => {
-    feedback.html(
-      "<p><i>" + data.username + " печатает сообщение..." + "</i></p>"
-    );
+    if (userRoom.val() === data.roomUsers) { 
+      feedback.html(
+       "<p><i>" + data.username + " печатает сообщение..." + "</i></p>"
+      );
+      setTimeout(() => {
+        feedback.html("");
+      }, 700); 
+    }
   });
 
-changeUserConnectionStatus();  
+changeUserConnectionStatus(); 
+toMessage();
 });
