@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.wrapper {
+    max-width: 790px;
+    margin: 8vh auto;
+}
+.about__title {
+    text-align: center;
+}
+.about__subtitle {
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 0;
+}
+.about__text {
+    margin-top: 0;
+}
+.information__title {
+    color: darkblue;
+    margin-bottom: 0;
+}
+.information__list {
+    margin-top: 0;
+    padding-left: 19px;
+}
+.list__item {
+    padding-left: 5px;
+}
+.list__education {
+    margin-left: 25%;
+}
+.list__work {
+    margin-left: 30%;
+}
+.completed-projects__title {
+    color: darkblue;
+    margin-bottom: 0;
+}
+.project__title {
+    margin-top: 7px;
+    margin-bottom: 0;
+    color: #000;
+}
+.project__link {
+    color: blue;
+    font-size: 1rem;
+    font-weight: 100;
+}
+.project__list {
+    margin-top: 0;
+    padding-left: 0;
+}
+.project__item {
+    list-style-type: none;
+    display: flex;
+}
+.project__subtitle {
+    display: inline;
+    margin: 0;
+    flex-basis: 14%;
+}
+.list__link {
+    color: blue;
+}
+@media screen and (max-width: 900px) {
+    .wrapper {
+        margin: 10%;
+    }
+}
