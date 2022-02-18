@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./raindrops/img/drop_icon-icons.com_54400.ico">
+    <link rel="stylesheet" href="./raindrops/style.css">
+    <title>Raindrops</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="game-field">
+            <div class="background">
+                <div class="start-buttons">
+                    <button class="start">Start</button>
+                    <button class="how-to-play">How to play</button>
+                </div>
+                <div class="result">
+                    <button class="reset-game">&#10060;</button><br>
+                    <p class="complexity">level: *2</p>
+                    <p class="score-result">score: 123</p>
+                    <p class="right">right: 10</p>
+                </div>
+            </div>
+            <div class="water-level"></div>
+        </div>
+        <div class="calculated-field">
+            <div class="score">
+                <span >&#11088;<span class="score-screen">Score: 931</span></span>
+                <button class="full-screen">⛶</button>
+            </div>
+            <div><span class="score-lives">&#128167; &#128167; &#128167;</span></div>
+            <div class="calculation">
+                <div class="scoreboard"><input class="scoreboard-number" 
+                    disabled value="0" placeholder="0000000000" type="text"></div>
+                <div class="buttons">
+                    <button class="button zero">0</button>
+                    <button class="button delete">&#8635;</button>
+                    <button class="button enter">&crarr;</button>
+                    <button class="button one">1</button>
+                    <button class="button two ">2</button>
+                    <button class="button three ">3</button>
+                    <button class="button four ">4</button>
+                    <button class="button five ">5</button>
+                    <button class="button six ">6</button>
+                    <button class="button seven ">7</button>
+                    <button class="button eight ">8</button>
+                    <button class="button ten ">9</button>
+                    <button class="button clear">&larr;</button>
+                </div>
+            </div>
+            <div class="settings">
+                <div class="number-limit-one">
+                    <ul class="list-number-limit-one">
+                        <li><input class="limit-one" checked type="radio" name="limit-one" value="2">2</li>
+                        <li><input class="limit-one" type="radio" name="limit-one" value="5">5</li>
+                        <li><input class="limit-one" type="radio" name="limit-one" value="10">10</li>
+                        <li><input class="limit-one" type="radio" name="limit-one" value="100">100</li>
+                    </ul>
+                </div>
+                <div class="arithmetic-operations">
+                    <ul class="list-arithmetic-operations">
+                        <li><input class="arithmetic-operation" checked type="checkbox" name="arithmetic-operation" value="+">➕</li>
+                        <li><input class="arithmetic-operation" type="checkbox" name="arithmetic-operation" value="-">➖</li>
+                        <li><input class="arithmetic-operation" type="checkbox" name="arithmetic-operation" value="*">❋</li>
+                        <li><input class="arithmetic-operation" type="checkbox" name="arithmetic-operation" value="/">➗</li>
+                    </ul>
+                </div>
+                <div class="number-limit-two">
+                    <ul class="list-number-limit-two">
+                        <li><input class="limit-two" checked type="radio" name="limit-two" value="2">2</li>
+                        <li><input class="limit-two" type="radio" name="limit-two" value="5">5</li>
+                        <li><input class="limit-two" type="radio" name="limit-two" value="10">10</li>
+                        <li><input class="limit-two" type="radio" name="limit-two" value="100">100</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="change-topic">
+                <button class="change-topic-button">&#119070;</button>
+                <audio autoplay loop class="background-sound" src="./raindrops/sound/79ddae5b075d62053434.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script src="./raindrops/script.js"></script>
+</body>
+</html>

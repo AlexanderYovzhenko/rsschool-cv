@@ -173,7 +173,7 @@ function checkRainDrops() {
             });
             success = false;
             soundFal.preload = 'auto';
-            soundFal.src = '../../sound/bef16b53f907d85.mp3';
+            soundFal.src = './raindrops/sound/bef16b53f907d85.mp3';
             soundFal.play();
             calcQuantitiesLives();
             calculateScore(); 
@@ -359,12 +359,12 @@ function checkButtonEnter() {
             clearInterval(timerMistakes);
             const soundClear = new Audio();
             soundClear.preload = 'auto';
-            soundClear.src = '../../sound/79ddae5b075d62053434.mp3';
+            soundClear.src = './raindrops/sound/79ddae5b075d62053434.mp3';
             soundClear.play();
         } else {
             const soundCorrect = new Audio();
             soundCorrect.preload = 'auto';
-            soundCorrect.src = '../../sound/ffc89ff250028f8.mp3';
+            soundCorrect.src = './raindrops/sound/ffc89ff250028f8.mp3';
             soundCorrect.play();
             arrayNewRainDrop.shift();
             arrayTimeStartDrop.shift();
@@ -393,7 +393,7 @@ function checkButtonEnter() {
     } else {
         const soundMistake = new Audio();
         soundMistake.preload = 'auto';
-        soundMistake.src = '../../sound/cab55714b513aa7.mp3';
+        soundMistake.src = './raindrops/sound/cab55714b513aa7.mp3';
         soundMistake.play();
         scoreboard.classList.add('mistake');  
         setTimeout(() => scoreboard.classList.remove('mistake'), 100);
@@ -524,11 +524,11 @@ function changeTopic() {
     changeTopicButton.addEventListener('click', () => {  
         changeTopicButton.blur(); 
         gameField.classList.toggle('change-topic-game-field');
-        if(backgroundSound.getAttribute('src') === '../../sound/97b952864e07e27.mp3') {
-            backgroundSound.setAttribute('src', '../../sound/kevin-macleod-pixelland.mp3');
+        if(backgroundSound.getAttribute('src') === './raindrops/sound/97b952864e07e27.mp3') {
+            backgroundSound.setAttribute('src', './raindrops/sound/kevin-macleod-pixelland.mp3');
             
         } else {
-            backgroundSound.setAttribute('src', '../../sound/97b952864e07e27.mp3');
+            backgroundSound.setAttribute('src', './raindrops/sound/97b952864e07e27.mp3');
         }   
     }); 
 }
