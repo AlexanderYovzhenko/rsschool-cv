@@ -520,13 +520,13 @@ function resultCalc() {
 
 
 //change topic and background sound 
+backgroundSound.volume = 0.5;
 function changeTopic() {
     changeTopicButton.addEventListener('click', () => {  
         changeTopicButton.blur(); 
         gameField.classList.toggle('change-topic-game-field');
         if(backgroundSound.getAttribute('src') === './raindrops/sound/97b952864e07e27.mp3') {
-            backgroundSound.setAttribute('src', './raindrops/sound/kevin-macleod-pixelland.mp3');
-            
+            backgroundSound.setAttribute('src', './raindrops/sound/kevin-macleod-pixelland.mp3');         
         } else {
             backgroundSound.setAttribute('src', './raindrops/sound/97b952864e07e27.mp3');
         }   
